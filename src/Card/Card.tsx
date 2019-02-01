@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import "./Card.css";
-import raceFlag from "./race.svg";
-import typeFlag from "./heavy-generic.svg";
+import React, { Component } from 'react';
+import './Card.css';
+import raceFlag from './race.svg';
+import typeFlag from './heavy-generic.svg';
 import {
   UnitAncestry,
   UnitType,
   UnitExperience,
   UnitEquipment,
-  UnitSize
-} from "../types/units";
+  UnitSize,
+} from '../types/units';
 
 interface Props {
   name: string;
