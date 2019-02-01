@@ -12,7 +12,6 @@ export type UnitAncestry =
   | 'Human'
   | 'Kobold'
   | 'Lizardfolk'
-  | 'None'
   | 'Ogre'
   | 'Orc'
   | 'Skeleton'
@@ -35,3 +34,19 @@ export type UnitExperience =
   | 'Super-Elite';
 export type UnitEquipment = 'Light' | 'Medium' | 'Heavy' | 'Super-Heavy';
 export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
+
+export interface CardStats {
+  attack: number;
+  defense: number;
+  power: number;
+  toughness: number;
+  morale: number;
+  size: UnitSize;
+}
+export interface CardData extends CardStats {
+  name: string;
+  ancestry: UnitAncestry;
+  type: UnitType;
+  experience: UnitExperience;
+  equipment: UnitEquipment;
+}
