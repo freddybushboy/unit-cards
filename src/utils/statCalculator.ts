@@ -23,7 +23,7 @@ export const attack = (state: State): number => {
 export const power = (state: State): number => {
   return (
     ancestryStats[state.ancestry].power +
-    (state.type === 'Levies'
+    (state.type === 'Levies' || state.type === 'Siege Engine'
       ? 0
       : experienceStats[state.experience].power +
         equipmentStats[state.equipment].power) +
@@ -51,7 +51,7 @@ export const toughness = (state: State, baseless?: boolean): number => {
   return (
     (!baseless ? toughnessBase : 0) +
     ancestryStats[state.ancestry].toughness +
-    (state.type === 'Levies'
+    (state.type === 'Levies' || state.type === 'Siege Engine'
       ? 0
       : experienceStats[state.experience].toughness +
         equipmentStats[state.equipment].toughness) +

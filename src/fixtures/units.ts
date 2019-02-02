@@ -37,7 +37,6 @@ export const unitTypes: UnitType[] = [
   'Siege Engine',
 ];
 export const unitExperiences: UnitExperience[] = [
-  'None',
   'Green',
   'Regular',
   'Seasoned',
@@ -46,7 +45,6 @@ export const unitExperiences: UnitExperience[] = [
   'Super-Elite',
 ];
 export const unitEquipments: UnitEquipment[] = [
-  'None',
   'Light',
   'Medium',
   'Heavy',

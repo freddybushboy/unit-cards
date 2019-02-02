@@ -32,14 +32,8 @@ export type UnitExperience =
   | 'Seasoned'
   | 'Veteran'
   | 'Elite'
-  | 'Super-Elite'
-  | 'None';
-export type UnitEquipment =
-  | 'Light'
-  | 'Medium'
-  | 'Heavy'
-  | 'Super-Heavy'
-  | 'None';
+  | 'Super-Elite';
+export type UnitEquipment = 'Light' | 'Medium' | 'Heavy' | 'Super-Heavy';
 export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
 
 export interface CardStats {
