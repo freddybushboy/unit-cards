@@ -1,14 +1,14 @@
 {
-  "main.css": "/unit-cards/static/css/main.c6898650.chunk.css",
-  "main.js": "/unit-cards/static/js/main.8b634f35.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.8b634f35.chunk.js.map",
+  "main.css": "/unit-cards/static/css/main.0ab70c4d.chunk.css",
+  "main.js": "/unit-cards/static/js/main.28969e3a.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.28969e3a.chunk.js.map",
   "static/js/1.ad163824.chunk.js": "/unit-cards/static/js/1.ad163824.chunk.js",
   "static/js/1.ad163824.chunk.js.map": "/unit-cards/static/js/1.ad163824.chunk.js.map",
   "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
   "runtime~main.js.map": "/unit-cards/static/js/runtime~main.b286fd5d.js.map",
-  "static/css/main.c6898650.chunk.css.map": "/unit-cards/static/css/main.c6898650.chunk.css.map",
-  "static/media/Card.css": "/unit-cards/static/media/corner-sw.88a57c81.svg",
+  "static/css/main.0ab70c4d.chunk.css.map": "/unit-cards/static/css/main.0ab70c4d.chunk.css.map",
+  "static/media/Card.css": "/unit-cards/static/media/corner-se.2a7e93cb.svg",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.20bcca426b86ede1ff4bec4ac89b6e70.js": "/unit-cards/precache-manifest.20bcca426b86ede1ff4bec4ac89b6e70.js",
+  "precache-manifest.d4a18c4689fcf44d24a7cb391c25de38.js": "/unit-cards/precache-manifest.d4a18c4689fcf44d24a7cb391c25de38.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }

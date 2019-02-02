@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/js/runtime~main.b286fd5d.js"
   },
   {
-    "revision": "8b634f352ffbda62df59",
-    "url": "/unit-cards/static/js/main.8b634f35.chunk.js"
+    "revision": "28969e3ade4154e12c24",
+    "url": "/unit-cards/static/js/main.28969e3a.chunk.js"
   },
   {
     "revision": "ad16382412044d49b19d",
     "url": "/unit-cards/static/js/1.ad163824.chunk.js"
   },
   {
-    "revision": "8b634f352ffbda62df59",
-    "url": "/unit-cards/static/css/main.c6898650.chunk.css"
+    "revision": "28969e3ade4154e12c24",
+    "url": "/unit-cards/static/css/main.0ab70c4d.chunk.css"
   },
   {
-    "revision": "0fb3293e99fcb67bcff7749c279e40b3",
+    "revision": "aca50e612e75a3aaaf6719fd5e226363",
     "url": "/unit-cards/index.html"
   }
 ];
