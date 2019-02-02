@@ -77,7 +77,9 @@ class App extends Component<{}, State> {
       toughness: toughness(this.state),
       morale: morale(this.state),
       cost: cost(this.state),
-      traits: this.state.traits.split('|') as Trait[],
+      traits: this.state.traits
+        ? (this.state.traits.split('|') as Trait[])
+        : [],
     };
   };
 
@@ -129,7 +131,7 @@ class App extends Component<{}, State> {
 
   clearTraits() {
     localStorage.removeItem('savedTraits');
-    this.setState({ savedTraits: [] });
+    this.setState({ savedTraits: [], traits: '' });
   }
 
   render() {

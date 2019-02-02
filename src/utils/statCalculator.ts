@@ -89,7 +89,9 @@ export const cost = (state: State): number => {
     cost += trait ? trait.cost : 0;
   });
   state.traits.split('|').forEach((traitName) => {
-    const trait = traitData.find((data) => data.name === traitName);
+    const trait =
+      traitData.find((data) => data.name === traitName) ||
+      state.savedTraits.find((data) => data.name === traitName);
     cost += trait ? trait.cost : 0;
   });
   cost += 30;
