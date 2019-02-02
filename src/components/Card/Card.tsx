@@ -69,7 +69,7 @@ export class Card extends Component<Props> {
           </div>
           <div className="card-top">
             <div className="card-name">{name}</div>
-            {type === 'Levies' || type === 'Siege Engine' ? (
+            {type === 'Levies' ? (
               <div className="card-type">
                 {ancestryOverride
                   ? ancestryOverride

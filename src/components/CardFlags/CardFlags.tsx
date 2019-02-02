@@ -148,9 +148,7 @@ export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
     <AncestryFlag
       ancestry={ancestry}
-      experience={
-        type !== 'Levies' && type !== 'Siege Engine' ? experience : 'Green'
-      }
+      experience={type !== 'Levies' ? experience : 'Green'}
     />
     <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
   </>

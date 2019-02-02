@@ -70,7 +70,7 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
       <label>Experience</label>
       <select
         value={state.experience}
-        disabled={state.type === 'Levies' || state.type === 'Siege Engine'}
+        disabled={state.type === 'Levies'}
         onChange={(e) =>
           update({
             experience: e.currentTarget.value as UnitExperience,
@@ -88,7 +88,7 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
       <label>Equipment</label>
       <select
         value={state.equipment}
-        disabled={state.type === 'Levies' || state.type === 'Siege Engine'}
+        disabled={state.type === 'Levies'}
         onChange={(e) =>
           update({
             equipment: e.currentTarget.value as UnitEquipment,
