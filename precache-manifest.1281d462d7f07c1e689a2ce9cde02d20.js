@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "5ff4e6106d73f08b2e19d5ae5e9179b0",
-    "url": "/unit-cards/static/media/gnoll.5ff4e610.jpg"
+    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
+    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "8b82c7c7dcdb09381482",
-    "url": "/unit-cards/static/css/main.c4e837d5.chunk.css"
+    "revision": "119589c08adf0a703476",
+    "url": "/unit-cards/static/css/main.3a5f857f.chunk.css"
   },
   {
-    "revision": "b791ff8d753ac4a269bc",
-    "url": "/unit-cards/static/js/1.b791ff8d.chunk.js"
+    "revision": "a520477dcd25ae41586d",
+    "url": "/unit-cards/static/js/1.a520477d.chunk.js"
   },
   {
     "revision": "b286fd5d2a8261d32a52",
     "url": "/unit-cards/static/js/runtime~main.b286fd5d.js"
+  },
+  {
+    "revision": "19ac85ce5897c456c8a1caef45278923",
+    "url": "/unit-cards/static/media/ancestry-super-elite.19ac85ce.png"
   },
   {
     "revision": "7c4b1b117e913832d83e7319a8378942",
@@ -56,16 +60,16 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
-    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
+    "revision": "119589c08adf0a703476",
+    "url": "/unit-cards/static/js/main.119589c0.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
     "url": "/unit-cards/static/media/ghoul.ad6ffda2.jpg"
   },
   {
-    "revision": "8b82c7c7dcdb09381482",
-    "url": "/unit-cards/static/js/main.8b82c7c7.chunk.js"
+    "revision": "5ff4e6106d73f08b2e19d5ae5e9179b0",
+    "url": "/unit-cards/static/media/gnoll.5ff4e610.jpg"
   },
   {
     "revision": "3da36bc17a3e7c1963be2c25b7fc841f",
@@ -116,19 +120,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "0d3ddcf22b68ef2e5d68ad356d6d23b0",
-    "url": "/unit-cards/static/media/corner-ne.0d3ddcf2.svg"
-  },
-  {
-    "revision": "88a57c817b0f200667626fdb46a11301",
-    "url": "/unit-cards/static/media/corner-sw.88a57c81.svg"
-  },
-  {
-    "revision": "2a7e93cb03fe0c15484b4b99138c628f",
-    "url": "/unit-cards/static/media/corner-se.2a7e93cb.svg"
-  },
-  {
-    "revision": "99c4ac98f42ceac4d237dd0fa257db4d",
+    "revision": "48e5377fd3a3e495268d04a909175105",
     "url": "/unit-cards/index.html"
   }
 ];
