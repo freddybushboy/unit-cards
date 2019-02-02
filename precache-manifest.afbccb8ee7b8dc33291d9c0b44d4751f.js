@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "fa2232dad4d5da88bee27b455d5156b1",
+    "revision": "9765131b9e723d3ed460c3bcefee1450",
     "url": "/unit-cards/index.html"
   }
 ];
