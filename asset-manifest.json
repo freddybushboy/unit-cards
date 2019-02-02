@@ -1,7 +1,7 @@
 {
   "main.css": "/unit-cards/static/css/main.5597d926.chunk.css",
-  "main.js": "/unit-cards/static/js/main.aa285f05.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.aa285f05.chunk.js.map",
+  "main.js": "/unit-cards/static/js/main.9e69262f.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.9e69262f.chunk.js.map",
   "static/js/1.63b932e0.chunk.js": "/unit-cards/static/js/1.63b932e0.chunk.js",
   "static/js/1.63b932e0.chunk.js.map": "/unit-cards/static/js/1.63b932e0.chunk.js.map",
   "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
@@ -34,6 +34,6 @@
   "static/media/zombie.jpg": "/unit-cards/static/media/zombie.7fef1448.jpg",
   "static/css/main.5597d926.chunk.css.map": "/unit-cards/static/css/main.5597d926.chunk.css.map",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.03400d5db82de80d0b9c3d94c1061737.js": "/unit-cards/precache-manifest.03400d5db82de80d0b9c3d94c1061737.js",
+  "precache-manifest.a60ceaab58cdf6f8e4a8be25158a4fac.js": "/unit-cards/precache-manifest.a60ceaab58cdf6f8e4a8be25158a4fac.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }
