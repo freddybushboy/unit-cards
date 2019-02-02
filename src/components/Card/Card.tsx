@@ -110,12 +110,21 @@ export class Card extends Component<Props> {
                 <div className="card-traits">Traits</div>
 
                 {ancestryStats[ancestry].traits.map((trait) => (
-                  <Trait trait={traitData.find((t) => t.name === trait)} />
+                  <Trait
+                    trait={traitData.find((t) => t.name === trait)}
+                    key={trait}
+                  />
                 ))}
                 {traits.map((trait) => (
                   <>
-                    <Trait trait={traitData.find((t) => t.name === trait)} />
-                    <Trait trait={savedTraits.find((t) => t.name === trait)} />
+                    <Trait
+                      trait={traitData.find((t) => t.name === trait)}
+                      key={trait}
+                    />
+                    <Trait
+                      trait={savedTraits.find((t) => t.name === trait)}
+                      key={trait}
+                    />
                   </>
                 ))}
               </>
