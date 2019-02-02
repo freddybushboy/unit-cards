@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "119589c08adf0a703476",
-    "url": "/unit-cards/static/css/main.3a5f857f.chunk.css"
+    "revision": "21a88d7bb678ed2cd072",
+    "url": "/unit-cards/static/css/main.c4863a7b.chunk.css"
   },
   {
-    "revision": "a520477dcd25ae41586d",
-    "url": "/unit-cards/static/js/1.a520477d.chunk.js"
+    "revision": "63b932e03dd31172f7dc",
+    "url": "/unit-cards/static/js/1.63b932e0.chunk.js"
   },
   {
     "revision": "b286fd5d2a8261d32a52",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "119589c08adf0a703476",
-    "url": "/unit-cards/static/js/main.119589c0.chunk.js"
+    "revision": "21a88d7bb678ed2cd072",
+    "url": "/unit-cards/static/js/main.21a88d7b.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "48e5377fd3a3e495268d04a909175105",
+    "revision": "159c1046d8a210e7511b1f3772ded581",
     "url": "/unit-cards/index.html"
   }
 ];

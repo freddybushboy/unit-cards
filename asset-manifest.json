@@ -1,9 +1,9 @@
 {
-  "main.css": "/unit-cards/static/css/main.3a5f857f.chunk.css",
-  "main.js": "/unit-cards/static/js/main.119589c0.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.119589c0.chunk.js.map",
-  "static/js/1.a520477d.chunk.js": "/unit-cards/static/js/1.a520477d.chunk.js",
-  "static/js/1.a520477d.chunk.js.map": "/unit-cards/static/js/1.a520477d.chunk.js.map",
+  "main.css": "/unit-cards/static/css/main.c4863a7b.chunk.css",
+  "main.js": "/unit-cards/static/js/main.21a88d7b.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.21a88d7b.chunk.js.map",
+  "static/js/1.63b932e0.chunk.js": "/unit-cards/static/js/1.63b932e0.chunk.js",
+  "static/js/1.63b932e0.chunk.js.map": "/unit-cards/static/js/1.63b932e0.chunk.js.map",
   "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
   "runtime~main.js.map": "/unit-cards/static/js/runtime~main.b286fd5d.js.map",
   "static/media/kobold.jpg": "/unit-cards/static/media/kobold.eeb46684.jpg",
@@ -32,8 +32,8 @@
   "static/media/treant.jpg": "/unit-cards/static/media/treant.08061c49.jpg",
   "static/media/troll.jpg": "/unit-cards/static/media/troll.98b35916.jpg",
   "static/media/zombie.jpg": "/unit-cards/static/media/zombie.7fef1448.jpg",
-  "static/css/main.3a5f857f.chunk.css.map": "/unit-cards/static/css/main.3a5f857f.chunk.css.map",
+  "static/css/main.c4863a7b.chunk.css.map": "/unit-cards/static/css/main.c4863a7b.chunk.css.map",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.1281d462d7f07c1e689a2ce9cde02d20.js": "/unit-cards/precache-manifest.1281d462d7f07c1e689a2ce9cde02d20.js",
+  "precache-manifest.0337ccf9f05b5ae19a8a6dc5697c53c9.js": "/unit-cards/precache-manifest.0337ccf9f05b5ae19a8a6dc5697c53c9.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }
