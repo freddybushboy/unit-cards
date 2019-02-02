@@ -1,5 +1,6 @@
 import { Trait } from './traits';
 import { CustomTrait } from '../fixtures/traits';
+import { string } from 'prop-types';
 
 export type UnitAncestry =
   | 'Bugbear'
@@ -56,4 +57,5 @@ export interface CardData extends CardStats {
   cost: number;
   traits: Trait[];
   savedTraits: CustomTrait[];
+  ancestryOverride: string;
 }

@@ -234,6 +234,14 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
           onChange={(e) => update({ cost: Number(e.target.value) })}
         />
       </div>
+      <div className="form-control">
+        <label>Ancestry name override</label>
+        <input
+          type="text"
+          value={state.ancestryOverride}
+          onChange={(e) => update({ ancestryOverride: e.target.value })}
+        />
+      </div>
     </Collapse>
   </div>
 );

@@ -39,6 +39,7 @@ export interface State {
   traitDescription: string;
   traitCost: number | undefined;
   savedTraits: CustomTrait[];
+  ancestryOverride: string;
 }
 
 class App extends Component<{}, State> {
@@ -60,6 +61,7 @@ class App extends Component<{}, State> {
     traitDescription: '',
     traitCost: undefined,
     savedTraits: [],
+    ancestryOverride: '',
   };
 
   componentDidMount() {

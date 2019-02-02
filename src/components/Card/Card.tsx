@@ -50,6 +50,7 @@ export class Card extends Component<Props> {
       cost,
       traits,
       savedTraits,
+      ancestryOverride,
     } = this.props.cardData;
 
     return (
@@ -60,7 +61,7 @@ export class Card extends Component<Props> {
         <div className="card-inner">
           <div className="card-flags">
             <CardFlags
-              ancestry={ancestry}
+              ancestry={ancestryOverride ? 'None' : ancestry}
               type={type}
               experience={experience}
               equipment={equipment}
@@ -70,11 +71,21 @@ export class Card extends Component<Props> {
             <div className="card-name">{name}</div>
             {type === 'Levies' || type === 'Siege Engine' ? (
               <div className="card-type">
-                {ancestry === 'None' ? '' : ancestry} {type}
+                {ancestryOverride
+                  ? ancestryOverride
+                  : ancestry === 'None'
+                  ? ''
+                  : ancestry}{' '}
+                {type}
               </div>
             ) : (
               <div className="card-type">
-                {ancestry === 'None' ? '' : ancestry} {experience}
+                {ancestryOverride
+                  ? ancestryOverride
+                  : ancestry === 'None'
+                  ? ''
+                  : ancestry}{' '}
+                {experience}
                 <br />
                 {equipment} {type}
               </div>
