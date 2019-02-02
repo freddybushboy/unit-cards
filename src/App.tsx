@@ -25,6 +25,12 @@ export interface State {
   experience: UnitExperience;
   equipment: UnitEquipment;
   size: UnitSize;
+  attack: number;
+  defense: number;
+  power: number;
+  toughness: number;
+  morale: number;
+  cost: number;
 }
 
 class App extends Component<{}, State> {
@@ -35,6 +41,12 @@ class App extends Component<{}, State> {
     experience: 'Regular' as UnitExperience,
     equipment: 'Medium' as UnitEquipment,
     size: 'd6' as UnitSize,
+    attack: 0,
+    defense: 0,
+    power: 0,
+    toughness: 0,
+    morale: 0,
+    cost: 0,
   };
 
   cardData = (): CardData => {

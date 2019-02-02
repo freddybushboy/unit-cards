@@ -1,0 +1,11 @@
+.collapse {
+  border: none;
+  padding: 0;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+.collapse legend {
+  padding: 5px;
+  font-size: 80%;
+}

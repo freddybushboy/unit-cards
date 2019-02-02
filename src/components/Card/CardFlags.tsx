@@ -1,6 +1,12 @@
 import React from 'react';
 import './Card.css';
 import starImg from './star.svg';
+import bowImg from './bow.svg';
+import swordImg from './sword.svg';
+import forkImg from './fork.svg';
+import catapultImg from './catapult.svg';
+import wingImg from './wing.svg';
+import horseshoeImg from './horseshoe.svg';
 import {
   UnitAncestry,
   UnitType,
@@ -58,8 +64,27 @@ const AncestryFlag = ({ experience }: { experience: UnitExperience }) => (
   </div>
 );
 
-const TypeFlag = ({ equipment }: { equipment: UnitEquipment }) => (
+const TypeFlag = ({
+  equipment,
+  type,
+}: {
+  equipment: UnitEquipment;
+  type: UnitType;
+}) => (
   <div className="card-flag">
+    {type === 'Archers' ? (
+      <img src={bowImg} className="type-icon" />
+    ) : type === 'Infantry' ? (
+      <img src={swordImg} className="type-icon" />
+    ) : type === 'Siege Engine' ? (
+      <img src={catapultImg} className="type-icon" />
+    ) : type === 'Levies' ? (
+      <img src={forkImg} className="type-icon" />
+    ) : type === 'Cavalry' ? (
+      <img src={horseshoeImg} className="type-icon" />
+    ) : type === 'Flying' ? (
+      <img src={wingImg} className="type-icon" />
+    ) : null}
     {equipment === 'Light' ? (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.4 66.8">
         <path
@@ -85,6 +110,6 @@ const TypeFlag = ({ equipment }: { equipment: UnitEquipment }) => (
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
     <AncestryFlag experience={type !== 'Levies' ? experience : 'Green'} />
-    <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} />
+    <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
   </>
 );

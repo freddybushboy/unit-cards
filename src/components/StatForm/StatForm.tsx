@@ -15,6 +15,7 @@ import {
   unitEquipments,
   unitSizes,
 } from '../../fixtures/units';
+import { Collapse } from '../Collapse/Collapse';
 
 interface Props {
   state: State;
@@ -113,5 +114,56 @@ export const StatForm = ({ state, update }: Props) => (
         ))}
       </select>
     </div>
+
+    <Collapse title="Advanced options...">
+      <div className="form-control">
+        <label>Attack adjustment</label>
+        <input
+          type="number"
+          value={state.attack}
+          onChange={(e) => update({ attack: Number(e.target.value) })}
+        />
+      </div>
+      <div className="form-control">
+        <label>Defense adjustment</label>
+        <input
+          type="number"
+          value={state.defense}
+          onChange={(e) => update({ defense: Number(e.target.value) })}
+        />
+      </div>
+      <div className="form-control">
+        <label>Power adjustment</label>
+        <input
+          type="number"
+          value={state.power}
+          onChange={(e) => update({ power: Number(e.target.value) })}
+        />
+      </div>
+      <div className="form-control">
+        <label>Toughness adjustment</label>
+        <input
+          type="number"
+          value={state.toughness}
+          onChange={(e) => update({ toughness: Number(e.target.value) })}
+        />
+      </div>
+      <div className="form-control">
+        <label>Morale adjustment</label>
+        <input
+          type="number"
+          value={state.morale}
+          onChange={(e) => update({ morale: Number(e.target.value) })}
+        />
+      </div>
+      <div className="form-control">
+        <label>Cost adjustment</label>
+        <input
+          type="number"
+          value={state.cost}
+          onChange={(e) => update({ cost: Number(e.target.value) })}
+        />
+      </div>
+    </Collapse>
   </div>
 );

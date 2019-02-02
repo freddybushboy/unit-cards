@@ -15,7 +15,8 @@ export const attack = (state: State): number => {
       ? 0
       : experienceStats[state.experience].attack +
         equipmentStats[state.equipment].attack) +
-    typeStats[state.type].attack
+    typeStats[state.type].attack +
+    state.attack
   );
 };
 
@@ -26,7 +27,8 @@ export const power = (state: State): number => {
       ? 0
       : experienceStats[state.experience].power +
         equipmentStats[state.equipment].power) +
-    typeStats[state.type].power
+    typeStats[state.type].power +
+    state.power
   );
 };
 
@@ -39,7 +41,8 @@ export const defense = (state: State, baseless?: boolean): number => {
       ? 0
       : experienceStats[state.experience].defense +
         equipmentStats[state.equipment].defense) +
-    typeStats[state.type].defense
+    typeStats[state.type].defense +
+    state.defense
   );
 };
 
@@ -52,7 +55,8 @@ export const toughness = (state: State, baseless?: boolean): number => {
       ? 0
       : experienceStats[state.experience].toughness +
         equipmentStats[state.equipment].toughness) +
-    typeStats[state.type].toughness
+    typeStats[state.type].toughness +
+    state.toughness
   );
 };
 
@@ -63,7 +67,8 @@ export const morale = (state: State): number => {
       ? 0
       : experienceStats[state.experience].morale +
         equipmentStats[state.equipment].morale) +
-    typeStats[state.type].morale
+    typeStats[state.type].morale +
+    state.morale
   );
 };
 
@@ -83,6 +88,7 @@ export const cost = (state: State): number => {
     cost += trait ? trait.cost : 0;
   });
   cost += 30;
+  cost += state.cost;
 
   return Math.round(cost);
 };
