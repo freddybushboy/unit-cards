@@ -1,6 +1,7 @@
 .card {
   border: 7px solid #b33320;
   width: 320px;
+  max-width: 100%;
   box-shadow: inset 0px 0px 0px 2px black;
   margin: 15px auto;
   text-align: left;
@@ -23,6 +24,12 @@
   position: absolute;
   top: -7px;
   left: 15px;
+}
+.ancestry-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
 }
 .card-top {
   padding-left: 70px;

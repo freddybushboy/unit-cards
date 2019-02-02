@@ -25,3 +25,10 @@ body {
 .text-transform-none {
   text-transform: none !important;
 }
+h1 {
+  margin: 0 0 10px;
+  color: #b33320;
+}
+h1 small {
+  font-size: 50%;
+}

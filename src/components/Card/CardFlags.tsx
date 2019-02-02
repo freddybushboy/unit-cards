@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css';
+import starImg from './star.svg';
 import {
   UnitAncestry,
   UnitType,
@@ -15,6 +16,7 @@ interface Props {
 }
 const AncestryFlag = ({ experience }: { experience: UnitExperience }) => (
   <div className="card-flag">
+    <img src={starImg} className="ancestry-icon" />
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="207.116 0 197.769 792">
       <path
         fill="#db1a21"

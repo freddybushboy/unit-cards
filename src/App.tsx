@@ -52,11 +52,25 @@ class App extends Component<{}, State> {
   render() {
     return (
       <div className="container">
+        <h1>
+          <small>Strongholds & Followers</small>
+          <br />
+          Unit Card Creator
+        </h1>
         <StatForm
           state={this.state}
           update={(state) => this.setState(state as State)}
         />
         <Card cardData={this.cardData()} />
+        <p>
+          <small>
+            For Matt Colville's{' '}
+            <a href="https://shop.mcdmproductions.com/products/strongholds-followers-pdf">
+              Strongholds & Followers
+            </a>
+            .
+          </small>
+        </p>
       </div>
     );
   }
