@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import html2canvas from 'html2canvas';
 import { Card } from './components/Card/Card';
 import {
   UnitAncestry,
@@ -61,6 +62,18 @@ class App extends Component<{}, State> {
     };
   };
 
+  generateImage() {
+    html2canvas(document.querySelector('#card') as HTMLElement).then(
+      (canvas) => {
+        const imageSection = document.querySelector('#image-section');
+        if (imageSection) {
+          imageSection.innerHTML = '';
+          imageSection.appendChild(canvas);
+        }
+      },
+    );
+  }
+
   render() {
     return (
       <div className="container">
@@ -74,6 +87,8 @@ class App extends Component<{}, State> {
           update={(state) => this.setState(state as State)}
         />
         <Card cardData={this.cardData()} />
+        <button onClick={this.generateImage}>Generate Image</button>
+        <div className="image-section" id="image-section" />
         <p>
           <small>
             For Matt Colville's{' '}

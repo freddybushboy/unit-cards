@@ -32,3 +32,9 @@ h1 {
 h1 small {
   font-size: 50%;
 }
+.image-section {
+  text-align: center;
+}
+.image-section canvas {
+  margin-top: 15px;
+}

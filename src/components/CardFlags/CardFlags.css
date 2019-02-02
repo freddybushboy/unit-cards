@@ -1,6 +1,6 @@
 .card-flags {
   position: absolute;
-  top: -7px;
+  top: -9px;
   left: 15px;
 }
 .card-flag {
@@ -24,6 +24,10 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 1px solid black;
+}
+.ancestry-flag,
+.equipment-flag {
+  width: 30px;
 }
 .type-icon {
   position: absolute;

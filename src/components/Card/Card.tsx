@@ -5,6 +5,9 @@ import { CardTable } from './CardTable';
 import { CardFlags } from '../CardFlags/CardFlags';
 import { ancestryStats } from '../../fixtures/unitStats';
 import { traitData, TraitData } from '../../fixtures/traits';
+import ne from './corner-ne.png';
+import se from './corner-se.png';
+import sw from './corner-sw.png';
 
 interface Props {
   cardData: CardData;
@@ -49,6 +52,9 @@ export class Card extends Component<Props> {
 
     return (
       <div className="card" id="card">
+        <img src={ne} className="card-corner-ne" />
+        <img src={se} className="card-corner-se" />
+        <img src={sw} className="card-corner-sw" />
         <div className="card-inner">
           <div className="card-flags">
             <CardFlags

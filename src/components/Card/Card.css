@@ -2,20 +2,34 @@
   border: 7px solid #b33320;
   width: 320px;
   max-width: 100%;
-  box-shadow: inset 0px 0px 0px 2px black;
   margin: 15px auto;
   text-align: left;
+  position: relative;
+}
+.card-corner-ne {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+}
+.card-corner-se {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 40px;
+}
+.card-corner-sw {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 40px;
 }
 .card-inner {
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border: 2px solid black;
   width: 100%;
   min-height: 200px;
-  padding: 15px 30px;
-  background-image: url(corner-ne.svg), url(corner-se.svg), url(corner-sw.svg);
-  background-position: right 5px top 5px, right 5px bottom 5px,
-    left 5px bottom 5px;
-  background-size: 40px;
-  background-repeat: no-repeat;
+  padding: 13px 28px;
   position: relative;
   color: #b33320;
   font-size: 13px;
@@ -54,9 +68,9 @@
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
+  border-top: 2px solid black;
 }
 .card-table td {
-  border-top: 2px solid black;
   border-bottom: 2px solid black;
   color: #df1314;
   text-transform: uppercase;
