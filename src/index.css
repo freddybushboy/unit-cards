@@ -5,10 +5,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-.hf {
-  font-family: 'Domine', serif;
-  font-weight: 700;
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.pad-right {
+  padding-right: 20px;
+}
+.text-transform-none {
+  text-transform: none !important;
 }

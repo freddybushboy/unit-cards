@@ -3,11 +3,31 @@ import './Card.css';
 import { CardData } from '../../types/units';
 import { CardTable } from './CardTable';
 import { CardFlags } from './CardFlags';
+import { ancestryStats } from '../../fixtures/unitStats';
+import { traitData, TraitData } from '../../fixtures/traits';
 
 interface Props {
   cardData: CardData;
 }
 
+const Trait = ({ trait }: { trait: TraitData | undefined }) => (
+  <div>
+    {trait ? (
+      <>
+        <b>{trait.name}</b>. {trait.description}
+      </>
+    ) : null}
+  </div>
+);
+
+const Charge = () => (
+  <Trait trait={traitData.find((data) => data.name === 'Charge')} />
+);
+const AlwaysDiminished = () => (
+  <Trait trait={traitData.find((data) => data.name === 'Always Diminished')} />
+);
+
+//TODO. Cost.
 export class Card extends Component<Props> {
   render() {
     const {
@@ -22,10 +42,11 @@ export class Card extends Component<Props> {
       power,
       toughness,
       morale,
+      cost,
     } = this.props.cardData;
 
     return (
-      <div className="card">
+      <div className="card" id="card">
         <div className="card-inner">
           <div className="card-flags">
             <CardFlags
@@ -37,13 +58,20 @@ export class Card extends Component<Props> {
           </div>
           <div className="card-top">
             <div className="card-name">{name}</div>
-            <div className="card-type">
-              {ancestry} {experience}
-              <br />
-              {equipment} {type}
-            </div>
+            {type === 'Levies' ? (
+              <div className="card-type">
+                {ancestry} {type}
+              </div>
+            ) : (
+              <div className="card-type">
+                {ancestry} {experience}
+                <br />
+                {equipment} {type}
+              </div>
+            )}
           </div>
           <div className="card-main">
+            <div className="card-cost">Cost: {cost ? cost : '-'}</div>
             <CardTable
               size={size}
               attack={attack}
@@ -52,11 +80,19 @@ export class Card extends Component<Props> {
               toughness={toughness}
               morale={morale}
             />
-            <div className="card-traits">Traits</div>
-            <div>
-              <b>Courageous</b>. Once per battle, this unit can choose to
-              succeed on a Morale check it just failed.
-            </div>
+            {ancestryStats[ancestry].traits.length ||
+            type === 'Cavalry' ||
+            type === 'Levies' ? (
+              <>
+                <div className="card-traits">Traits</div>
+
+                {ancestryStats[ancestry].traits.map((trait) => (
+                  <Trait trait={traitData.find((t) => t.name === trait)} />
+                ))}
+              </>
+            ) : null}
+            {type === 'Cavalry' && <Charge />}
+            {type === 'Levies' && <AlwaysDiminished />}
           </div>
         </div>
       </div>

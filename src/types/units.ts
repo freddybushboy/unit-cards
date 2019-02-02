@@ -19,12 +19,12 @@ export type UnitAncestry =
   | 'Troll'
   | 'Zombie';
 export type UnitType =
+  | 'Flying'
+  | 'Archers'
+  | 'Cavalry'
   | 'Levies'
   | 'Infantry'
-  | 'Cavalry'
-  | 'Siege Engine'
-  | 'Archers'
-  | 'Airborne';
+  | 'Siege Engine';
 export type UnitExperience =
   | 'Green'
   | 'Regular'
@@ -49,4 +49,5 @@ export interface CardData extends CardStats {
   type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
+  cost: number;
 }

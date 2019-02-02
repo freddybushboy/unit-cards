@@ -2,6 +2,8 @@
   border: 7px solid #b33320;
   width: 320px;
   box-shadow: inset 0px 0px 0px 2px black;
+  margin: 15px auto;
+  text-align: left;
 }
 .card-inner {
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
@@ -25,7 +27,7 @@
 .card-top {
   padding-left: 70px;
   padding-top: 10px;
-  min-height: 110px;
+  min-height: 90px;
 }
 .card-main {
   padding-bottom: 15px;
@@ -74,4 +76,8 @@
 .card-flag svg {
   width: 100%;
   height: auto;
+}
+.card-cost {
+  text-align: right;
+  text-transform: uppercase;
 }

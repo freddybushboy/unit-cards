@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardStats } from '../../types/units';
 
+const positive = (num: number): string => (Math.sign(num) >= 0 ? '+' : '');
 export const CardTable = ({
   size,
   attack,
@@ -13,21 +14,30 @@ export const CardTable = ({
     <tbody>
       <tr>
         <td>Attack:</td>
-        <td>{attack}</td>
+        <td className="text-right pad-right">
+          {positive(attack)}
+          {attack}
+        </td>
         <td>Defense:</td>
-        <td>{defense}</td>
+        <td className="text-right">{defense}</td>
       </tr>
       <tr>
         <td>Power:</td>
-        <td>{power}</td>
+        <td className="text-right pad-right">
+          {positive(power)}
+          {power}
+        </td>
         <td>Toughness:</td>
-        <td>{toughness}</td>
+        <td className="text-right">{toughness}</td>
       </tr>
       <tr>
         <td>Morale:</td>
-        <td>{morale}</td>
+        <td className="text-right pad-right">
+          {positive(morale)}
+          {morale}
+        </td>
         <td>Size:</td>
-        <td>1{size}</td>
+        <td className="text-right text-transform-none">1{size}</td>
       </tr>
     </tbody>
   </table>

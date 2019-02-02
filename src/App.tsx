@@ -15,6 +15,7 @@ import {
   power,
   toughness,
   morale,
+  cost,
 } from './utils/statCalculator';
 
 export interface State {
@@ -31,8 +32,8 @@ class App extends Component<{}, State> {
     name: 'Unit Name',
     ancestry: 'Human' as UnitAncestry,
     type: 'Infantry' as UnitType,
-    experience: 'Green' as UnitExperience,
-    equipment: 'Light' as UnitEquipment,
+    experience: 'Regular' as UnitExperience,
+    equipment: 'Medium' as UnitEquipment,
     size: 'd6' as UnitSize,
   };
 
@@ -44,18 +45,19 @@ class App extends Component<{}, State> {
       power: power(this.state),
       toughness: toughness(this.state),
       morale: morale(this.state),
+      cost: cost(this.state),
     };
   };
 
   render() {
     return (
-      <>
+      <div className="container">
         <StatForm
           state={this.state}
           update={(state) => this.setState(state as State)}
         />
         <Card cardData={this.cardData()} />
-      </>
+      </div>
     );
   }
 }

@@ -28,12 +28,12 @@ export const unitAncestries: UnitAncestry[] = [
   'Zombie',
 ];
 export const unitTypes: UnitType[] = [
+  'Flying',
+  'Archers',
+  'Cavalry',
   'Levies',
   'Infantry',
-  'Cavalry',
   'Siege Engine',
-  'Archers',
-  'Airborne',
 ];
 export const unitExperiences: UnitExperience[] = [
   'Green',
