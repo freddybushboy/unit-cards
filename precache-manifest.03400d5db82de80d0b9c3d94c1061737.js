@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "6e1f665ae251dd5a39c0",
+    "revision": "aa285f0513531ebb5822",
     "url": "/unit-cards/static/css/main.5597d926.chunk.css"
   },
   {
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "6e1f665ae251dd5a39c0",
-    "url": "/unit-cards/static/js/main.6e1f665a.chunk.js"
+    "revision": "aa285f0513531ebb5822",
+    "url": "/unit-cards/static/js/main.aa285f05.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "8aaec46bc27412e189f84752a85228e0",
+    "revision": "754bf5d93ced9940b14640167ece6856",
     "url": "/unit-cards/index.html"
   }
 ];
