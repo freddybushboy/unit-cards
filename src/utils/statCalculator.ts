@@ -7,6 +7,7 @@ import {
   sizeStats,
 } from '../fixtures/unitStats';
 import { traitData } from '../fixtures/traits';
+import { Trait } from '../types/traits';
 
 export const attack = (state: State): number => {
   return (
@@ -84,6 +85,10 @@ export const cost = (state: State): number => {
   cost = cost * sizeStats[state.size].costMultiplier;
   cost = cost * 10;
   ancestryStats[state.ancestry].traits.forEach((traitName) => {
+    const trait = traitData.find((data) => data.name === traitName);
+    cost += trait ? trait.cost : 0;
+  });
+  state.traits.split('|').forEach((traitName) => {
     const trait = traitData.find((data) => data.name === traitName);
     cost += trait ? trait.cost : 0;
   });

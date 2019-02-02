@@ -5,6 +5,11 @@ export interface TraitData {
   cost: number;
   description: string;
 }
+export interface CustomTrait {
+  name: string;
+  description: string;
+  cost: number;
+}
 export const traitData: TraitData[] = [
   {
     name: 'Amphibious',

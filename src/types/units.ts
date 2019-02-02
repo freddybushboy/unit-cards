@@ -1,3 +1,6 @@
+import { Trait } from './traits';
+import { CustomTrait } from '../fixtures/traits';
+
 export type UnitAncestry =
   | 'Bugbear'
   | 'Dragonborn'
@@ -51,4 +54,6 @@ export interface CardData extends CardStats {
   experience: UnitExperience;
   equipment: UnitEquipment;
   cost: number;
+  traits: Trait[];
+  savedTraits: CustomTrait[];
 }

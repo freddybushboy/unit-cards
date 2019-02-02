@@ -4,7 +4,7 @@ import { CardData } from '../../types/units';
 import { CardTable } from './CardTable';
 import { CardFlags } from '../CardFlags/CardFlags';
 import { ancestryStats } from '../../fixtures/unitStats';
-import { traitData, TraitData } from '../../fixtures/traits';
+import { traitData, TraitData, CustomTrait } from '../../fixtures/traits';
 import ne from './corner-ne.png';
 import se from './corner-se.png';
 import sw from './corner-sw.png';
@@ -13,7 +13,7 @@ interface Props {
   cardData: CardData;
 }
 
-const Trait = ({ trait }: { trait: TraitData | undefined }) => (
+const Trait = ({ trait }: { trait: TraitData | CustomTrait | undefined }) => (
   <div>
     {trait ? (
       <>
@@ -48,6 +48,8 @@ export class Card extends Component<Props> {
       toughness,
       morale,
       cost,
+      traits,
+      savedTraits,
     } = this.props.cardData;
 
     return (
@@ -89,6 +91,7 @@ export class Card extends Component<Props> {
               morale={morale}
             />
             {ancestryStats[ancestry].traits.length ||
+            traits.length ||
             type === 'Cavalry' ||
             type === 'Siege Engine' ||
             type === 'Levies' ? (
@@ -97,6 +100,12 @@ export class Card extends Component<Props> {
 
                 {ancestryStats[ancestry].traits.map((trait) => (
                   <Trait trait={traitData.find((t) => t.name === trait)} />
+                ))}
+                {traits.map((trait) => (
+                  <>
+                    <Trait trait={traitData.find((t) => t.name === trait)} />
+                    <Trait trait={savedTraits.find((t) => t.name === trait)} />
+                  </>
                 ))}
               </>
             ) : null}
