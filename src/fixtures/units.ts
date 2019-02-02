@@ -7,6 +7,7 @@ import {
 } from '../types/units';
 
 export const unitAncestries: UnitAncestry[] = [
+  'None',
   'Bugbear',
   'Dragonborn',
   'Dwarf',
@@ -36,6 +37,7 @@ export const unitTypes: UnitType[] = [
   'Siege Engine',
 ];
 export const unitExperiences: UnitExperience[] = [
+  'None',
   'Green',
   'Regular',
   'Seasoned',
@@ -44,6 +46,7 @@ export const unitExperiences: UnitExperience[] = [
   'Super-Elite',
 ];
 export const unitEquipments: UnitEquipment[] = [
+  'None',
   'Light',
   'Medium',
   'Heavy',

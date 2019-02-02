@@ -16,4 +16,5 @@ export type Trait =
   | 'Twisting Roots'
   | 'Undead'
   | 'Charge'
-  | 'Always Diminished';
+  | 'Always Diminished'
+  | 'Siege Engine';

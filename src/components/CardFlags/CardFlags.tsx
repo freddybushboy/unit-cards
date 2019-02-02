@@ -1,12 +1,31 @@
 import React from 'react';
-import './Card.css';
-import starImg from './star.svg';
-import bowImg from './bow.svg';
-import swordImg from './sword.svg';
-import forkImg from './fork.svg';
-import catapultImg from './catapult.svg';
-import wingImg from './wing.svg';
-import horseshoeImg from './horseshoe.svg';
+import './CardFlags.css';
+import starImg from './assets/star.svg';
+import bowImg from './assets/bow.svg';
+import swordImg from './assets/sword.svg';
+import forkImg from './assets/fork.svg';
+import catapultImg from './assets/catapult.svg';
+import wingImg from './assets/wing.svg';
+import horseshoeImg from './assets/horseshoe.svg';
+import bugbearImg from './assets/ancestry/bugbear.jpg';
+import dragonbornImg from './assets/ancestry/dragonborn.jpg';
+import dwarfImg from './assets/ancestry/dwarf.jpg';
+import elfImg from './assets/ancestry/elf.jpg';
+import ghoulImg from './assets/ancestry/ghoul.jpg';
+import gnollImg from './assets/ancestry/gnoll.jpg';
+import gnomeImg from './assets/ancestry/gnome.jpg';
+import goblinImg from './assets/ancestry/goblin.jpg';
+import hobgoblinImg from './assets/ancestry/hobgoblin.jpg';
+import humanImg from './assets/ancestry/human.jpg';
+import koboldImg from './assets/ancestry/kobold.jpg';
+import lizardfolkImg from './assets/ancestry/lizardfolk.jpg';
+import ogreImg from './assets/ancestry/ogre.jpg';
+import orcImg from './assets/ancestry/orc.jpg';
+import skeletonImg from './assets/ancestry/skeleton.jpg';
+import treantImg from './assets/ancestry/treant.jpg';
+import trollImg from './assets/ancestry/troll.jpg';
+import zombieImg from './assets/ancestry/zombie.jpg';
+
 import {
   UnitAncestry,
   UnitType,
@@ -20,9 +39,52 @@ interface Props {
   equipment: UnitEquipment;
   experience: UnitExperience;
 }
-const AncestryFlag = ({ experience }: { experience: UnitExperience }) => (
+const AncestryFlag = ({
+  experience,
+  ancestry,
+}: {
+  experience: UnitExperience;
+  ancestry: UnitAncestry;
+}) => (
   <div className="card-flag">
     <img src={starImg} className="ancestry-icon" />
+    {ancestry === 'Bugbear' ? (
+      <img src={bugbearImg} className="ancestry-image" />
+    ) : ancestry === 'Dragonborn' ? (
+      <img src={dragonbornImg} className="ancestry-image" />
+    ) : ancestry === 'Dwarf' ? (
+      <img src={dwarfImg} className="ancestry-image" />
+    ) : ancestry === 'Elf' || ancestry === 'Elven (Winged)' ? (
+      <img src={elfImg} className="ancestry-image" />
+    ) : ancestry === 'Ghoul' ? (
+      <img src={ghoulImg} className="ancestry-image" />
+    ) : ancestry === 'Gnoll' ? (
+      <img src={gnollImg} className="ancestry-image" />
+    ) : ancestry === 'Gnome' ? (
+      <img src={gnomeImg} className="ancestry-image" />
+    ) : ancestry === 'Goblin' ? (
+      <img src={goblinImg} className="ancestry-image" />
+    ) : ancestry === 'Hobgoblin' ? (
+      <img src={hobgoblinImg} className="ancestry-image" />
+    ) : ancestry === 'Human' ? (
+      <img src={humanImg} className="ancestry-image" />
+    ) : ancestry === 'Kobold' ? (
+      <img src={koboldImg} className="ancestry-image" />
+    ) : ancestry === 'Lizardfolk' ? (
+      <img src={lizardfolkImg} className="ancestry-image" />
+    ) : ancestry === 'Ogre' ? (
+      <img src={ogreImg} className="ancestry-image" />
+    ) : ancestry === 'Orc' ? (
+      <img src={orcImg} className="ancestry-image" />
+    ) : ancestry === 'Skeleton' ? (
+      <img src={skeletonImg} className="ancestry-image" />
+    ) : ancestry === 'Treant' ? (
+      <img src={treantImg} className="ancestry-image" />
+    ) : ancestry === 'Troll' ? (
+      <img src={trollImg} className="ancestry-image" />
+    ) : ancestry === 'Zombie' ? (
+      <img src={zombieImg} className="ancestry-image" />
+    ) : null}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="207.116 0 197.769 792">
       <path
         fill="#db1a21"
@@ -109,7 +171,12 @@ const TypeFlag = ({
 );
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
-    <AncestryFlag experience={type !== 'Levies' ? experience : 'Green'} />
+    <AncestryFlag
+      ancestry={ancestry}
+      experience={
+        type !== 'Levies' && type !== 'Siege Engine' ? experience : 'Green'
+      }
+    />
     <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
   </>
 );

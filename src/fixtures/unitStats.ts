@@ -165,6 +165,14 @@ export const ancestryStats: { [k: string]: AncestryStatBlock } = {
     morale: 2,
     traits: ['Undead', 'Mindless'],
   },
+  None: {
+    attack: 0,
+    power: 0,
+    defense: 0,
+    toughness: 0,
+    morale: 0,
+    traits: [],
+  },
 };
 
 export const experienceStats: { [k: string]: StatBlock } = {
@@ -210,6 +218,13 @@ export const experienceStats: { [k: string]: StatBlock } = {
     toughness: 2,
     morale: 5,
   },
+  None: {
+    attack: 0,
+    power: 0,
+    defense: 0,
+    toughness: 0,
+    morale: 0,
+  },
 };
 
 export const equipmentStats: { [k: string]: StatBlock } = {
@@ -238,6 +253,13 @@ export const equipmentStats: { [k: string]: StatBlock } = {
     attack: 0,
     power: 6,
     defense: 6,
+    toughness: 0,
+    morale: 0,
+  },
+  None: {
+    attack: 0,
+    power: 0,
+    defense: 0,
     toughness: 0,
     morale: 0,
   },

@@ -20,25 +20,6 @@
   color: #b33320;
   font-size: 13px;
 }
-.card-flags {
-  position: absolute;
-  top: -7px;
-  left: 15px;
-}
-.ancestry-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-}
-.type-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  transform: translate(-50%, -50%);
-  margin-top: -10px;
-}
 .card-top {
   padding-left: 70px;
   padding-top: 10px;
@@ -81,17 +62,6 @@
   text-transform: uppercase;
   font-weight: 700;
   font-family: 'Cabin', sans-serif;
-}
-.card-flag {
-  width: 30px;
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.card-flag svg {
-  width: 100%;
-  height: auto;
 }
 .card-cost {
   text-align: right;

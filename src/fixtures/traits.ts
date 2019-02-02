@@ -111,4 +111,10 @@ export const traitData: TraitData[] = [
     description: 'This unit it always diminished.',
     cost: 0,
   },
+  {
+    name: 'Siege Engine',
+    description:
+      'This unit can attack fortifications, dealing 1d6 damage on a hit.',
+    cost: 0,
+  },
 ];
