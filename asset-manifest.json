@@ -1,14 +1,15 @@
 {
-  "main.css": "/unit-cards/static/css/main.0ab70c4d.chunk.css",
-  "main.js": "/unit-cards/static/js/main.28969e3a.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.28969e3a.chunk.js.map",
-  "static/js/1.ad163824.chunk.js": "/unit-cards/static/js/1.ad163824.chunk.js",
-  "static/js/1.ad163824.chunk.js.map": "/unit-cards/static/js/1.ad163824.chunk.js.map",
+  "main.css": "/unit-cards/static/css/main.a189819a.chunk.css",
+  "main.js": "/unit-cards/static/js/main.8744ab30.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.8744ab30.chunk.js.map",
+  "static/js/1.0015e402.chunk.js": "/unit-cards/static/js/1.0015e402.chunk.js",
+  "static/js/1.0015e402.chunk.js.map": "/unit-cards/static/js/1.0015e402.chunk.js.map",
   "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
   "runtime~main.js.map": "/unit-cards/static/js/runtime~main.b286fd5d.js.map",
-  "static/css/main.0ab70c4d.chunk.css.map": "/unit-cards/static/css/main.0ab70c4d.chunk.css.map",
-  "static/media/Card.css": "/unit-cards/static/media/corner-se.2a7e93cb.svg",
+  "static/media/Card.css": "/unit-cards/static/media/corner-sw.88a57c81.svg",
+  "static/media/star.svg": "/unit-cards/static/media/star.7c4b1b11.svg",
+  "static/css/main.a189819a.chunk.css.map": "/unit-cards/static/css/main.a189819a.chunk.css.map",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.d4a18c4689fcf44d24a7cb391c25de38.js": "/unit-cards/precache-manifest.d4a18c4689fcf44d24a7cb391c25de38.js",
+  "precache-manifest.bdfd3c4948c8c90a641dfa2fe87ddf95.js": "/unit-cards/precache-manifest.bdfd3c4948c8c90a641dfa2fe87ddf95.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }

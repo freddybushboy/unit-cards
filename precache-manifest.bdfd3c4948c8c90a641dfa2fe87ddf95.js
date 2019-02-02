@@ -1,5 +1,9 @@
 self.__precacheManifest = [
   {
+    "revision": "7c4b1b117e913832d83e7319a8378942",
+    "url": "/unit-cards/static/media/star.7c4b1b11.svg"
+  },
+  {
     "revision": "88a57c817b0f200667626fdb46a11301",
     "url": "/unit-cards/static/media/corner-sw.88a57c81.svg"
   },
@@ -16,19 +20,19 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/js/runtime~main.b286fd5d.js"
   },
   {
-    "revision": "28969e3ade4154e12c24",
-    "url": "/unit-cards/static/js/main.28969e3a.chunk.js"
+    "revision": "8744ab30d352e92803da",
+    "url": "/unit-cards/static/js/main.8744ab30.chunk.js"
   },
   {
-    "revision": "ad16382412044d49b19d",
-    "url": "/unit-cards/static/js/1.ad163824.chunk.js"
+    "revision": "0015e402282519a1ea3d",
+    "url": "/unit-cards/static/js/1.0015e402.chunk.js"
   },
   {
-    "revision": "28969e3ade4154e12c24",
-    "url": "/unit-cards/static/css/main.0ab70c4d.chunk.css"
+    "revision": "8744ab30d352e92803da",
+    "url": "/unit-cards/static/css/main.a189819a.chunk.css"
   },
   {
-    "revision": "aca50e612e75a3aaaf6719fd5e226363",
+    "revision": "f58564096e8415f840d471edda8b1113",
     "url": "/unit-cards/index.html"
   }
 ];
