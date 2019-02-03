@@ -1,15 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "ad6ffda21e01c405bfb79de5cba3210c",
-    "url": "/unit-cards/static/media/ghoul.ad6ffda2.jpg"
+    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
+    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "e05d4f7b24a6de73c817",
-    "url": "/unit-cards/static/css/main.37935d06.chunk.css"
+    "revision": "bb3720ec3b723f29e40a",
+    "url": "/unit-cards/static/css/main.0d0e5958.chunk.css"
   },
   {
-    "revision": "63b932e03dd31172f7dc",
-    "url": "/unit-cards/static/js/1.63b932e0.chunk.js"
+    "revision": "7fef14480f059a04387a0d135e04ae4b",
+    "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
+  },
+  {
+    "revision": "30fa96c726825c916f51",
+    "url": "/unit-cards/static/js/1.30fa96c7.chunk.js"
   },
   {
     "revision": "b286fd5d2a8261d32a52",
@@ -56,12 +60,12 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
-    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
+    "revision": "bb3720ec3b723f29e40a",
+    "url": "/unit-cards/static/js/main.bb3720ec.chunk.js"
   },
   {
-    "revision": "e05d4f7b24a6de73c817",
-    "url": "/unit-cards/static/js/main.e05d4f7b.chunk.js"
+    "revision": "ad6ffda21e01c405bfb79de5cba3210c",
+    "url": "/unit-cards/static/media/ghoul.ad6ffda2.jpg"
   },
   {
     "revision": "5ff4e6106d73f08b2e19d5ae5e9179b0",
@@ -112,11 +116,11 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/troll.98b35916.jpg"
   },
   {
-    "revision": "7fef14480f059a04387a0d135e04ae4b",
-    "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
+    "revision": "30fa96c726825c916f51",
+    "url": "/unit-cards/static/css/1.e911d134.chunk.css"
   },
   {
-    "revision": "e810c9ed60fc57e62b980475a963c0b2",
+    "revision": "a2bc3e223a898560e23587fd27ecb534",
     "url": "/unit-cards/index.html"
   }
 ];
