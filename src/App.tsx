@@ -138,21 +138,30 @@ class App extends Component<{}, State> {
 
   render() {
     return (
-      <div className="container">
+      <div className="container text-center">
         <h1>
           <small>Strongholds & Followers</small>
           <br />
           Unit Card Creator
         </h1>
-        <StatForm
-          state={this.state}
-          update={(state) => this.setState(state as State)}
-          addTrait={() => this.addTrait()}
-          clearTraits={() => this.clearTraits()}
-        />
-        <Card cardData={this.cardData()} />
-        <button onClick={this.generateImage}>Generate Image</button>
-        <div className="image-section" id="image-section" />
+        <div className="row">
+          <div className="col-md-6">
+            <StatForm
+              state={this.state}
+              update={(state) => this.setState(state as State)}
+              addTrait={() => this.addTrait()}
+              clearTraits={() => this.clearTraits()}
+            />
+          </div>
+
+          <div className="col-md-6">
+            <Card cardData={this.cardData()} />
+            <button className="btn btn-primary" onClick={this.generateImage}>
+              Generate Image
+            </button>
+            <div className="image-section" id="image-section" />
+          </div>
+        </div>
         <p>
           <small>
             For Matt Colville's{' '}

@@ -14,17 +14,19 @@ export class Collapse extends Component<Props, State> {
   };
   render() {
     return (
-      <fieldset className="collapse">
-        <legend>
-          <a
-            href="#"
-            onClick={() => this.setState({ collapsed: !this.state.collapsed })}
-          >
+      <div className="card">
+        <div
+          className="card-header"
+          onClick={() => this.setState({ collapsed: !this.state.collapsed })}
+        >
+          <a href="#" onClick={(e) => e.preventDefault()}>
             {this.props.title}
           </a>
-        </legend>
-        {!this.state.collapsed ? <div>{this.props.children}</div> : null}
-      </fieldset>
+        </div>
+        {!this.state.collapsed ? (
+          <div className="card-body">{this.props.children}</div>
+        ) : null}
+      </div>
     );
   }
 }

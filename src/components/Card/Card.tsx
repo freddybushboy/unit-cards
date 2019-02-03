@@ -54,7 +54,7 @@ export class Card extends Component<Props> {
     } = this.props.cardData;
 
     return (
-      <div className="card" id="card">
+      <div className="unit-card" id="card">
         <img src={ne} className="card-corner-ne" />
         <img src={se} className="card-corner-se" />
         <img src={sw} className="card-corner-sw" />

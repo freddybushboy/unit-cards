@@ -10,11 +10,10 @@ body {
 *:after {
   box-sizing: border-box;
 }
-.container {
-  max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto 15px;
-  text-align: center;
+@media only screen and (min-width: 768px) {
+  .col-md-6 {
+    width: 50%;
+  }
 }
 .text-right {
   text-align: right;
@@ -37,4 +36,7 @@ h1 small {
 }
 .image-section canvas {
   margin-top: 15px;
+}
+.card {
+  margin-bottom: 15px;
 }
