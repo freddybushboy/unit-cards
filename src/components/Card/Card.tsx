@@ -112,20 +112,19 @@ export class Card extends Component<Props> {
                 {ancestryStats[ancestry].traits.map((trait) => (
                   <Trait
                     trait={traitData.find((t) => t.name === trait)}
-                    key={trait}
+                    key={`ancestry-${trait}`}
                   />
                 ))}
                 {traits.map((trait) => (
-                  <>
-                    <Trait
-                      trait={traitData.find((t) => t.name === trait)}
-                      key={trait}
-                    />
-                    <Trait
-                      trait={savedTraits.find((t) => t.name === trait)}
-                      key={trait}
-                    />
-                  </>
+                  <div key={`parent-${trait}`}>
+                    {traitData.find((t) => t.name === trait) ? (
+                      <Trait trait={traitData.find((t) => t.name === trait)} />
+                    ) : (
+                      <Trait
+                        trait={savedTraits.find((t) => t.name === trait)}
+                      />
+                    )}
+                  </div>
                 ))}
               </>
             ) : null}
