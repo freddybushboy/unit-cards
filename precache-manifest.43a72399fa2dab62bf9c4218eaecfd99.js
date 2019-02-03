@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
-    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
+    "revision": "ad6ffda21e01c405bfb79de5cba3210c",
+    "url": "/unit-cards/static/media/ghoul.ad6ffda2.jpg"
   },
   {
-    "revision": "33673a40e4910dd5c8b3",
-    "url": "/unit-cards/static/css/main.5597d926.chunk.css"
+    "revision": "e05d4f7b24a6de73c817",
+    "url": "/unit-cards/static/css/main.37935d06.chunk.css"
   },
   {
     "revision": "63b932e03dd31172f7dc",
@@ -18,10 +18,6 @@ self.__precacheManifest = [
   {
     "revision": "19ac85ce5897c456c8a1caef45278923",
     "url": "/unit-cards/static/media/ancestry-super-elite.19ac85ce.png"
-  },
-  {
-    "revision": "7c4b1b117e913832d83e7319a8378942",
-    "url": "/unit-cards/static/media/star.7c4b1b11.svg"
   },
   {
     "revision": "4cd55cc070156126e809ae680434b71f",
@@ -60,12 +56,12 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "33673a40e4910dd5c8b3",
-    "url": "/unit-cards/static/js/main.33673a40.chunk.js"
+    "revision": "cc448cd7c5b62ab215ee4b75d52a790f",
+    "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "ad6ffda21e01c405bfb79de5cba3210c",
-    "url": "/unit-cards/static/media/ghoul.ad6ffda2.jpg"
+    "revision": "e05d4f7b24a6de73c817",
+    "url": "/unit-cards/static/js/main.e05d4f7b.chunk.js"
   },
   {
     "revision": "5ff4e6106d73f08b2e19d5ae5e9179b0",
@@ -120,7 +116,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "78c112e8d9ad70491219fc5d20910b46",
+    "revision": "e810c9ed60fc57e62b980475a963c0b2",
     "url": "/unit-cards/index.html"
   }
 ];
