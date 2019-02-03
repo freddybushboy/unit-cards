@@ -10,7 +10,7 @@ import seasonedImg from './assets/ancestry-seasoned.png';
 import veteranImg from './assets/ancestry-veteran.png';
 import eliteImg from './assets/ancestry-elite.png';
 import supereliteImg from './assets/ancestry-super-elite.png';
-import starImg from './assets/star.svg';
+import starImg from './assets/star.png';
 import bowImg from './assets/bow.svg';
 import swordImg from './assets/sword.svg';
 import forkImg from './assets/fork.svg';

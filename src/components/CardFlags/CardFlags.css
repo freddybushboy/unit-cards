@@ -12,9 +12,10 @@
 }
 .ancestry-icon {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
+  top: 35%;
+  left: 50%;
+  width: 75%;
+  transform: translate(-50%, -50%);
 }
 .ancestry-image {
   position: absolute;
