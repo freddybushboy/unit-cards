@@ -279,13 +279,22 @@ class App extends Component<{}, State> {
             <div className="image-section" id="image-section" />
           </div>
         </div>
+        <hr />
+        <p>
+          For Matt Colville's{' '}
+          <a href="https://shop.mcdmproductions.com/products/strongholds-followers-pdf">
+            Strongholds & Followers
+          </a>
+          .
+        </p>
         <p>
           <small>
-            For Matt Colville's{' '}
-            <a href="https://shop.mcdmproductions.com/products/strongholds-followers-pdf">
-              Strongholds & Followers
-            </a>
-            .
+            An{' '}
+            <a href="https://github.com/freddybushboy/unit-cards">
+              open-source
+            </a>{' '}
+            project built by{' '}
+            <a href="https://twitter.com/FreddyBushBoy">freddybushboy</a>.
           </small>
         </p>
       </div>

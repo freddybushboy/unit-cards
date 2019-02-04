@@ -1,3 +1,7 @@
+Unit Card creator for Matt Colville's [Strongholds & Followers](https://shop.mcdmproductions.com/products/strongholds-followers-pdf)
+
+[Live Site](https://freddybushboy.github.io/unit-cards/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
