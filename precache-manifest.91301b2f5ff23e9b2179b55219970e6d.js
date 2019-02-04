@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/css/1.dade5acf.chunk.css"
   },
   {
-    "revision": "e002addff71f395f798cb71d85e8a5db",
+    "revision": "1731543569ec9448b3f222442b350936",
     "url": "/unit-cards/index.html"
   }
 ];
