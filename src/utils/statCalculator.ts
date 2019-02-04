@@ -88,10 +88,10 @@ export const cost = (state: State): number => {
     const trait = traitData.find((data) => data.name === traitName);
     cost += trait ? trait.cost : 0;
   });
-  state.traits.split('|').forEach((traitName) => {
+  state.selectedTraits.forEach((i) => {
     const trait =
-      traitData.find((data) => data.name === traitName) ||
-      state.savedTraits.find((data) => data.name === traitName);
+      traitData.find((data) => data.name === i.value) ||
+      state.savedTraits.find((data) => data.name === i.value);
     cost += trait ? trait.cost : 0;
   });
   cost += 30;

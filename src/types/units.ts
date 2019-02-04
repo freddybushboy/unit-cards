@@ -55,7 +55,7 @@ export interface CardData extends CardStats {
   experience: UnitExperience;
   equipment: UnitEquipment;
   cost: number;
-  traits: Trait[];
+  selectedTraits: Trait[];
   savedTraits: CustomTrait[];
   ancestryOverride: string;
 }

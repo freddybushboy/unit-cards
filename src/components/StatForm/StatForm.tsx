@@ -142,7 +142,7 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
         <div className="col-md-6">
           <div className="form-group">
             <label>Traits</label>
-            {/* <Select
+            <Select
               isMulti
               onChange={(
                 value: ValueType<{
@@ -151,54 +151,46 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
                 }>,
               ) =>
                 update({
-                  selectedTraits: value as ValueType<{
+                  selectedTraits: value as {
                     value: string;
                     label: string;
-                  }>[],
+                  }[],
                 })
               }
               options={[
-                ...traitData.map((data) => ({
-                  value: data.name,
-                  label: data.name,
-                })),
-                ...state.savedTraits.map((data) => ({
-                  value: data.name,
-                  label: data.name,
-                })),
+                {
+                  label: 'Core',
+                  options: [
+                    ...traitData.map((data) => ({
+                      value: data.name,
+                      label: data.name,
+                    })),
+                  ],
+                },
+                {
+                  label: 'custom',
+                  options: [
+                    ...state.savedTraits.map((data) => ({
+                      value: data.name,
+                      label: data.name,
+                    })),
+                  ],
+                },
               ]}
-            /> */}
-            <select
-              className="form-control"
-              multiple
-              size={7}
-              value={state.traits.split('|')}
-              onChange={(e) => {
-                const selected = [].slice
-                  .call(e.target.options)
-                  .filter((i: HTMLOptionElement) => i.selected)
-                  .map((i: HTMLOptionElement) => i.value)
-                  .join('|');
-                update({
-                  traits: selected,
-                });
-              }}
-            >
-              {traitData.map((data) => (
-                <option value={data.name} key={data.name}>
-                  {data.name}
-                </option>
-              ))}
-              {state.savedTraits.map((data) => (
-                <option value={data.name} key={data.name}>
-                  {data.name}
-                </option>
-              ))}
-            </select>
-            <small className="form-text text-muted">
-              You can select multiple. Custom traits are added to the bottom of
-              the list.
-            </small>
+            />
+            {state.savedTraits.length ? (
+              <small>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    clearTraits();
+                  }}
+                >
+                  Clear custom traits
+                </a>
+              </small>
+            ) : null}
           </div>
         </div>
         <div className="col-md-6">
@@ -238,12 +230,7 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
             </div>
             <button className="btn btn-primary" type="submit">
               Add Trait
-            </button>{' '}
-            <small>
-              <a href="#" onClick={clearTraits}>
-                Clear custom traits
-              </a>
-            </small>
+            </button>
           </form>
         </div>
       </div>

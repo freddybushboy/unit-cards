@@ -48,7 +48,7 @@ export class Card extends Component<Props> {
       toughness,
       morale,
       cost,
-      traits,
+      selectedTraits,
       savedTraits,
       ancestryOverride,
     } = this.props.cardData;
@@ -102,7 +102,7 @@ export class Card extends Component<Props> {
               morale={morale}
             />
             {ancestryStats[ancestry].traits.length ||
-            traits.length ||
+            selectedTraits.length ||
             type === 'Cavalry' ||
             type === 'Siege Engine' ||
             type === 'Levies' ? (
@@ -115,7 +115,7 @@ export class Card extends Component<Props> {
                     key={`ancestry-${trait}`}
                   />
                 ))}
-                {traits.map((trait) => (
+                {selectedTraits.map((trait) => (
                   <div key={`parent-${trait}`}>
                     {traitData.find((t) => t.name === trait) ? (
                       <Trait trait={traitData.find((t) => t.name === trait)} />

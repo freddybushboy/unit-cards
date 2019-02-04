@@ -28,8 +28,7 @@ export interface State {
   type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
-  traits: string;
-  selectedTraits: ValueType<{ value: string; label: string }>[];
+  selectedTraits: { value: string; label: string }[];
   size: UnitSize;
   attack: number;
   defense: number;
@@ -51,8 +50,7 @@ class App extends Component<{}, State> {
     type: 'Infantry' as UnitType,
     experience: 'Regular' as UnitExperience,
     equipment: 'Medium' as UnitEquipment,
-    traits: '',
-    selectedTraits: [] as ValueType<{ value: string; label: string }>[],
+    selectedTraits: [] as { value: string; label: string }[],
     size: 'd6' as UnitSize,
     attack: 0,
     defense: 0,
@@ -82,9 +80,7 @@ class App extends Component<{}, State> {
       toughness: toughness(this.state),
       morale: morale(this.state),
       cost: cost(this.state),
-      traits: this.state.traits
-        ? (this.state.traits.split('|') as Trait[])
-        : [],
+      selectedTraits: this.state.selectedTraits.map((i) => i.value as Trait),
     };
   };
 
@@ -136,7 +132,7 @@ class App extends Component<{}, State> {
 
   clearTraits() {
     localStorage.removeItem('savedTraits');
-    this.setState({ savedTraits: [], traits: '' });
+    this.setState({ savedTraits: [], selectedTraits: [] });
   }
 
   render() {
