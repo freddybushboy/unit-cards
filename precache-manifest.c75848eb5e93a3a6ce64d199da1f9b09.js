@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "bb3720ec3b723f29e40a",
-    "url": "/unit-cards/static/css/main.0d0e5958.chunk.css"
+    "revision": "7015210a5326a0d091da",
+    "url": "/unit-cards/static/css/main.225c15fa.chunk.css"
   },
   {
     "revision": "7fef14480f059a04387a0d135e04ae4b",
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "30fa96c726825c916f51",
-    "url": "/unit-cards/static/js/1.30fa96c7.chunk.js"
+    "revision": "dca215e2575e7c8f29f5",
+    "url": "/unit-cards/static/js/1.dca215e2.chunk.js"
   },
   {
     "revision": "b286fd5d2a8261d32a52",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "bb3720ec3b723f29e40a",
-    "url": "/unit-cards/static/js/main.bb3720ec.chunk.js"
+    "revision": "7015210a5326a0d091da",
+    "url": "/unit-cards/static/js/main.7015210a.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
@@ -116,11 +116,11 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/troll.98b35916.jpg"
   },
   {
-    "revision": "30fa96c726825c916f51",
-    "url": "/unit-cards/static/css/1.e911d134.chunk.css"
+    "revision": "dca215e2575e7c8f29f5",
+    "url": "/unit-cards/static/css/1.dade5acf.chunk.css"
   },
   {
-    "revision": "a2bc3e223a898560e23587fd27ecb534",
+    "revision": "b94e92dae75e8a2c9cdf7a75d4067acc",
     "url": "/unit-cards/index.html"
   }
 ];
