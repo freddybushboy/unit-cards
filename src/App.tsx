@@ -20,6 +20,7 @@ import {
 } from './utils/statCalculator';
 import { Trait } from './types/traits';
 import { CustomTrait, traitData, TraitData } from './fixtures/traits';
+import { ValueType } from 'react-select/lib/types';
 
 export interface State {
   name: string;
@@ -28,6 +29,7 @@ export interface State {
   experience: UnitExperience;
   equipment: UnitEquipment;
   traits: string;
+  selectedTraits: ValueType<{ value: string; label: string }>[];
   size: UnitSize;
   attack: number;
   defense: number;
@@ -50,6 +52,7 @@ class App extends Component<{}, State> {
     experience: 'Regular' as UnitExperience,
     equipment: 'Medium' as UnitEquipment,
     traits: '',
+    selectedTraits: [] as ValueType<{ value: string; label: string }>[],
     size: 'd6' as UnitSize,
     attack: 0,
     defense: 0,

@@ -19,6 +19,8 @@ import {
 import { Collapse } from '../Collapse/Collapse';
 import { Trait } from '../../types/traits';
 import { traitData } from '../../fixtures/traits';
+import Select from 'react-select';
+import { ValueType } from 'react-select/lib/types';
 
 interface Props {
   state: State;
@@ -140,6 +142,32 @@ export const StatForm = ({ state, update, addTrait, clearTraits }: Props) => (
         <div className="col-md-6">
           <div className="form-group">
             <label>Traits</label>
+            {/* <Select
+              isMulti
+              onChange={(
+                value: ValueType<{
+                  value: string;
+                  label: string;
+                }>,
+              ) =>
+                update({
+                  selectedTraits: value as ValueType<{
+                    value: string;
+                    label: string;
+                  }>[],
+                })
+              }
+              options={[
+                ...traitData.map((data) => ({
+                  value: data.name,
+                  label: data.name,
+                })),
+                ...state.savedTraits.map((data) => ({
+                  value: data.name,
+                  label: data.name,
+                })),
+              ]}
+            /> */}
             <select
               className="form-control"
               multiple
