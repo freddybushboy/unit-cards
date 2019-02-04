@@ -40,3 +40,11 @@ h1 small {
 .card {
   margin-bottom: 15px;
 }
+.saved-units {
+  margin-top: 15px;
+}
+.list-group-item {
+  padding: 5px 10px;
+  line-height: 30px;
+  overflow: hidden;
+}

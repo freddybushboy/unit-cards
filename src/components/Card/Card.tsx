@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { CardData } from '../../types/units';
+import { UnitData } from '../../types/units';
 import { CardTable } from './CardTable';
 import { CardFlags } from '../CardFlags/CardFlags';
 import { ancestryStats } from '../../fixtures/unitStats';
@@ -10,7 +10,8 @@ import se from './corner-se.png';
 import sw from './corner-sw.png';
 
 interface Props {
-  cardData: CardData;
+  unitData: UnitData;
+  savedTraits: CustomTrait[];
 }
 
 const Trait = ({ trait }: { trait: TraitData | CustomTrait | undefined }) => (
@@ -49,9 +50,8 @@ export class Card extends Component<Props> {
       morale,
       cost,
       selectedTraits,
-      savedTraits,
       ancestryOverride,
-    } = this.props.cardData;
+    } = this.props.unitData;
 
     return (
       <div className="unit-card" id="card">
@@ -117,11 +117,15 @@ export class Card extends Component<Props> {
                 ))}
                 {selectedTraits.map((trait) => (
                   <div key={`parent-${trait}`}>
-                    {traitData.find((t) => t.name === trait) ? (
-                      <Trait trait={traitData.find((t) => t.name === trait)} />
+                    {traitData.find((t) => t.name === trait.value) ? (
+                      <Trait
+                        trait={traitData.find((t) => t.name === trait.value)}
+                      />
                     ) : (
                       <Trait
-                        trait={savedTraits.find((t) => t.name === trait)}
+                        trait={this.props.savedTraits.find(
+                          (t) => t.name === trait.value,
+                        )}
                       />
                     )}
                   </div>

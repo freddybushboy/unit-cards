@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardStats } from '../../types/units';
+import { UnitStats } from '../../types/units';
 
 const positive = (num: number): string => (Math.sign(num) >= 0 ? '+' : '');
 export const CardTable = ({
@@ -9,7 +9,7 @@ export const CardTable = ({
   power,
   toughness,
   morale,
-}: CardStats) => (
+}: UnitStats) => (
   <table className="card-table">
     <tbody>
       <tr>

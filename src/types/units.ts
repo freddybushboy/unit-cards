@@ -40,7 +40,7 @@ export type UnitExperience =
 export type UnitEquipment = 'Light' | 'Medium' | 'Heavy' | 'Super-Heavy';
 export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
 
-export interface CardStats {
+export interface UnitStats {
   attack: number;
   defense: number;
   power: number;
@@ -48,14 +48,13 @@ export interface CardStats {
   morale: number;
   size: UnitSize;
 }
-export interface CardData extends CardStats {
+export interface UnitData extends UnitStats {
   name: string;
   ancestry: UnitAncestry;
   type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
   cost: number;
-  selectedTraits: Trait[];
-  savedTraits: CustomTrait[];
+  selectedTraits: { value: string }[];
   ancestryOverride: string;
 }

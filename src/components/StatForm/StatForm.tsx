@@ -32,18 +32,20 @@ interface Props {
 
 export class StatForm extends Component<Props> {
   formatOptionLabel = (
-    data: { value: string; label: string },
-    meta: FormatOptionLabelMeta<{ value: string; label: string }>,
+    data: { value: string },
+    meta: FormatOptionLabelMeta<{ value: string }>,
   ) => {
     const trait =
-      traitData.find((trait) => trait.name === data.label) ||
-      this.props.state.savedTraits.find((trait) => trait.name === data.label);
+      traitData.find((trait) => trait.name === data.value) ||
+      this.props.state.savedTraits.find((trait) => trait.name === data.value);
     return (
       <div>
-        <span>{data.label}</span>
-        <br />
+        <span className={!trait ? 'text-danger' : ''}>{data.value}</span>
         {trait && meta.context === 'menu' ? (
-          <small className="trait-description">{trait.description}</small>
+          <>
+            <br />
+            <small className="trait-description">{trait.description}</small>
+          </>
         ) : null}
       </div>
     );
@@ -167,16 +169,15 @@ export class StatForm extends Component<Props> {
                 <Select
                   isMulti
                   formatOptionLabel={this.formatOptionLabel}
+                  value={state.selectedTraits}
                   onChange={(
                     value: ValueType<{
                       value: string;
-                      label: string;
                     }>,
                   ) =>
                     update({
                       selectedTraits: value as {
                         value: string;
-                        label: string;
                       }[],
                     })
                   }
@@ -186,7 +187,6 @@ export class StatForm extends Component<Props> {
                       options: [
                         ...traitData.map((data) => ({
                           value: data.name,
-                          label: data.name,
                         })),
                       ],
                     },
@@ -195,7 +195,6 @@ export class StatForm extends Component<Props> {
                       options: [
                         ...state.savedTraits.map((data) => ({
                           value: data.name,
-                          label: data.name,
                         })),
                       ],
                     },

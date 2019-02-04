@@ -7,7 +7,7 @@ import {
   UnitExperience,
   UnitEquipment,
   UnitSize,
-  CardData,
+  UnitData,
 } from './types/units';
 import { StatForm } from './components/StatForm/StatForm';
 import {
@@ -21,6 +21,7 @@ import {
 import { Trait } from './types/traits';
 import { CustomTrait, traitData, TraitData } from './fixtures/traits';
 import { ValueType } from 'react-select/lib/types';
+import { Collapse } from './components/Collapse/Collapse';
 
 export interface State {
   name: string;
@@ -28,7 +29,7 @@ export interface State {
   type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
-  selectedTraits: { value: string; label: string }[];
+  selectedTraits: { value: string }[];
   size: UnitSize;
   attack: number;
   defense: number;
@@ -36,11 +37,12 @@ export interface State {
   toughness: number;
   morale: number;
   cost: number;
+  ancestryOverride: string;
   traitName: string;
   traitDescription: string;
   traitCost: number | undefined;
   savedTraits: CustomTrait[];
-  ancestryOverride: string;
+  savedUnits: UnitData[];
 }
 
 class App extends Component<{}, State> {
@@ -50,7 +52,7 @@ class App extends Component<{}, State> {
     type: 'Infantry' as UnitType,
     experience: 'Regular' as UnitExperience,
     equipment: 'Medium' as UnitEquipment,
-    selectedTraits: [] as { value: string; label: string }[],
+    selectedTraits: [] as { value: string }[],
     size: 'd6' as UnitSize,
     attack: 0,
     defense: 0,
@@ -58,20 +60,22 @@ class App extends Component<{}, State> {
     toughness: 0,
     morale: 0,
     cost: 0,
+    ancestryOverride: '',
     traitName: '',
     traitDescription: '',
     traitCost: undefined,
-    savedTraits: [],
-    ancestryOverride: '',
+    savedTraits: [] as CustomTrait[],
+    savedUnits: [] as UnitData[],
   };
 
   componentDidMount() {
     this.setState({
       savedTraits: JSON.parse(localStorage.getItem('savedTraits') || '[]'),
+      savedUnits: JSON.parse(localStorage.getItem('savedUnits') || '[]'),
     });
   }
 
-  cardData = (): CardData => {
+  unitDataComputed = (): UnitData => {
     return {
       ...this.state,
       attack: attack(this.state),
@@ -80,7 +84,6 @@ class App extends Component<{}, State> {
       toughness: toughness(this.state),
       morale: morale(this.state),
       cost: cost(this.state),
-      selectedTraits: this.state.selectedTraits.map((i) => i.value as Trait),
     };
   };
 
@@ -135,6 +138,84 @@ class App extends Component<{}, State> {
     this.setState({ savedTraits: [], selectedTraits: [] });
   }
 
+  saveUnit = () => {
+    const {
+      name,
+      ancestry,
+      type,
+      experience,
+      equipment,
+      selectedTraits,
+      size,
+      attack,
+      defense,
+      power,
+      toughness,
+      morale,
+      cost,
+      ancestryOverride,
+      savedUnits,
+    } = this.state;
+
+    this.setState(
+      {
+        savedUnits: [
+          ...savedUnits.filter((u) => u.name !== name),
+          {
+            name,
+            ancestry,
+            type,
+            experience,
+            equipment,
+            selectedTraits,
+            size,
+            attack,
+            defense,
+            power,
+            toughness,
+            morale,
+            cost,
+            ancestryOverride,
+          },
+        ],
+      },
+      () => {
+        localStorage.setItem(
+          'savedUnits',
+          JSON.stringify(this.state.savedUnits),
+        );
+      },
+    );
+  };
+
+  loadUnit = (unit: UnitData) => {
+    this.setState({ ...unit });
+  };
+
+  deleteUnit = (unit: UnitData) => {
+    this.setState(
+      {
+        savedUnits: this.state.savedUnits.filter((u) => u.name !== unit.name),
+      },
+      () => {
+        localStorage.setItem(
+          'savedUnits',
+          JSON.stringify(this.state.savedUnits),
+        );
+      },
+    );
+  };
+
+  traitsMissing = (unit: UnitData) => {
+    return unit.selectedTraits.some(
+      (trait) =>
+        !(
+          traitData.some((t) => t.name === trait.value) ||
+          this.state.savedTraits.some((s) => s.name === trait.value)
+        ),
+    );
+  };
+
   render() {
     return (
       <div className="container text-center">
@@ -151,12 +232,49 @@ class App extends Component<{}, State> {
               addTrait={() => this.addTrait()}
               clearTraits={() => this.clearTraits()}
             />
+            {this.state.savedUnits.length ? (
+              <div className="text-left saved-units">
+                <Collapse title="Saved units...">
+                  <ul className="list-group">
+                    {this.state.savedUnits.map((unit) => (
+                      <li className="list-group-item">
+                        {unit.name}{' '}
+                        {this.traitsMissing(unit) ? (
+                          <span className="text-danger">
+                            {' '}
+                            (missing traits){' '}
+                          </span>
+                        ) : null}
+                        <button
+                          className="btn btn-sm btn-primary float-right"
+                          onClick={() => this.loadUnit(unit)}
+                        >
+                          Load
+                        </button>
+                        <button
+                          className="btn btn-sm btn-danger float-right mr-1"
+                          onClick={() => this.deleteUnit(unit)}
+                        >
+                          Delete
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </Collapse>
+              </div>
+            ) : null}
           </div>
 
           <div className="col-md-6">
-            <Card cardData={this.cardData()} />
+            <Card
+              unitData={this.unitDataComputed()}
+              savedTraits={this.state.savedTraits}
+            />
             <button className="btn btn-primary" onClick={this.generateImage}>
               Generate Image
+            </button>{' '}
+            <button className="btn btn-primary" onClick={this.saveUnit}>
+              Save Unit
             </button>
             <div className="image-section" id="image-section" />
           </div>
