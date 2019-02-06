@@ -22,6 +22,13 @@ import { Trait } from './types/traits';
 import { CustomTrait, traitData, TraitData } from './fixtures/traits';
 import { ValueType } from 'react-select/lib/types';
 import { Collapse } from './components/Collapse/Collapse';
+import {
+  unitAncestries,
+  unitTypes,
+  unitExperiences,
+  unitEquipments,
+  unitSizes,
+} from './fixtures/units';
 
 export interface State {
   name: string;
@@ -74,6 +81,20 @@ class App extends Component<{}, State> {
       savedUnits: JSON.parse(localStorage.getItem('savedUnits') || '[]'),
     });
   }
+
+  randomUnit = () => {
+    this.setState({
+      name: 'Random Unit',
+      ancestry:
+        unitAncestries[Math.floor(Math.random() * unitAncestries.length)],
+      type: unitTypes[Math.floor(Math.random() * unitTypes.length)],
+      experience:
+        unitExperiences[Math.floor(Math.random() * unitExperiences.length)],
+      equipment:
+        unitEquipments[Math.floor(Math.random() * unitEquipments.length)],
+      size: unitSizes[Math.floor(Math.random() * unitSizes.length)],
+    });
+  };
 
   unitDataComputed = (): UnitData => {
     return {
@@ -261,6 +282,9 @@ class App extends Component<{}, State> {
                     ))}
                   </ul>
                 </Collapse>
+                <button className="btn btn-primary" onClick={this.randomUnit}>
+                  Random Unit
+                </button>
               </div>
             ) : null}
           </div>
