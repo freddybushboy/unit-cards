@@ -123,6 +123,7 @@ export class Card extends Component<Props> {
               power={power}
               toughness={toughness}
               morale={morale}
+              type={type}
             />
             {(ancestryStats[ancestry].traits.length &&
               type !== 'Fortification') ||

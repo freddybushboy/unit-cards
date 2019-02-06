@@ -9,23 +9,24 @@ export const CardTable = ({
   power,
   toughness,
   morale,
+  type,
 }: UnitStats) => (
   <table className="card-table">
     <tbody>
       <tr>
         <td>Attack:</td>
         <td className="text-right pad-right">
-          {positive(attack)}
-          {attack}
+          {type === 'Fortification' ? '—' : `${positive(attack)} ${attack}`}
         </td>
         <td>Defense:</td>
-        <td className="text-right">{defense}</td>
+        <td className="text-right">
+          {type === 'Fortification' ? '—' : defense}
+        </td>
       </tr>
       <tr>
         <td>Power:</td>
         <td className="text-right pad-right">
-          {positive(power)}
-          {power}
+          {type === 'Fortification' ? '—' : `${positive(power)} ${power}`}
         </td>
         <td>Toughness:</td>
         <td className="text-right">{toughness}</td>
@@ -33,8 +34,7 @@ export const CardTable = ({
       <tr>
         <td>Morale:</td>
         <td className="text-right pad-right">
-          {positive(morale)}
-          {morale}
+          {type === 'Fortification' ? '—' : `${positive(morale)} ${morale}`}
         </td>
         <td>Size:</td>
         <td className="text-right text-transform-none">1{size}</td>

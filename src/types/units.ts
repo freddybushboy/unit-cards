@@ -50,11 +50,11 @@ export interface UnitStats {
   toughness: number;
   morale: number;
   size: UnitSize;
+  type: UnitType;
 }
 export interface UnitData extends UnitStats {
   name: string;
   ancestry: UnitAncestry;
-  type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
   fortLevel: FortLevel;

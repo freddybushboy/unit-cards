@@ -297,11 +297,11 @@ class App extends Component<{}, State> {
                     ))}
                   </ul>
                 </Collapse>
-                <button className="btn btn-primary" onClick={this.randomUnit}>
-                  Random Unit
-                </button>
               </div>
             ) : null}
+            <button className="btn btn-primary" onClick={this.randomUnit}>
+              Random Unit
+            </button>
           </div>
 
           <div className="col-md-6">
