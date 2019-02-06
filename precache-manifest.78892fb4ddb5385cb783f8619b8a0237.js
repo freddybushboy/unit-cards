@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "726946cfb7b17c8c4767",
-    "url": "/unit-cards/static/css/main.a0e291e1.chunk.css"
+    "revision": "58e0199a2bfc2dfc7b1b",
+    "url": "/unit-cards/static/css/main.8168f15c.chunk.css"
   },
   {
     "revision": "7fef14480f059a04387a0d135e04ae4b",
     "url": "/unit-cards/static/media/zombie.7fef1448.jpg"
   },
   {
-    "revision": "921602292e86eeace69c",
-    "url": "/unit-cards/static/js/1.92160229.chunk.js"
+    "revision": "c5ab96cae3d54b1cf106",
+    "url": "/unit-cards/static/js/1.c5ab96ca.chunk.js"
   },
   {
     "revision": "b286fd5d2a8261d32a52",
@@ -48,6 +48,10 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/horseshoe.e5e1de74.svg"
   },
   {
+    "revision": "df7c2b076aa1948fc787e985f9b6098d",
+    "url": "/unit-cards/static/media/tower.df7c2b07.svg"
+  },
+  {
     "revision": "72254e11adce42f7b1fb12ec7f1262be",
     "url": "/unit-cards/static/media/bugbear.72254e11.jpg"
   },
@@ -60,8 +64,8 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "726946cfb7b17c8c4767",
-    "url": "/unit-cards/static/js/main.726946cf.chunk.js"
+    "revision": "58e0199a2bfc2dfc7b1b",
+    "url": "/unit-cards/static/js/main.58e0199a.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
@@ -116,11 +120,11 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/troll.98b35916.jpg"
   },
   {
-    "revision": "921602292e86eeace69c",
-    "url": "/unit-cards/static/css/1.dade5acf.chunk.css"
+    "revision": "c5ab96cae3d54b1cf106",
+    "url": "/unit-cards/static/css/1.ae55f346.chunk.css"
   },
   {
-    "revision": "0a405016c8a45d05c0fea16971b3ca73",
+    "revision": "408c56138afc7294450ccd30d127660a",
     "url": "/unit-cards/index.html"
   }
 ];
