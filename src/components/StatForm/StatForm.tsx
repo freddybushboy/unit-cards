@@ -8,6 +8,8 @@ import {
   UnitExperience,
   UnitEquipment,
   UnitSize,
+  FortLevel,
+  FortType,
 } from '../../types/units';
 import {
   unitAncestries,
@@ -15,6 +17,8 @@ import {
   unitExperiences,
   unitEquipments,
   unitSizes,
+  fortLevels,
+  fortTypes,
 } from '../../fixtures/units';
 import { Collapse } from '../Collapse/Collapse';
 import { Trait } from '../../types/traits';
@@ -70,6 +74,7 @@ export class StatForm extends Component<Props> {
               <select
                 className="form-control"
                 value={state.ancestry}
+                disabled={state.type === 'Fortification'}
                 onChange={(e) =>
                   update({
                     ancestry: e.currentTarget.value as UnitAncestry,
@@ -99,6 +104,50 @@ export class StatForm extends Component<Props> {
                 ))}
               </select>
             </div>
+            {state.type === 'Fortification' ? (
+              <div className="card">
+                <div className="card-body">
+                  <div className="form-group">
+                    <label>Fortification type</label>
+                    <select
+                      className="form-control"
+                      value={state.fortType}
+                      onChange={(e) =>
+                        update({
+                          fortType: e.currentTarget.value as FortType,
+                        })
+                      }
+                    >
+                      {fortTypes.map((value) => (
+                        <option value={value} key={value}>
+                          {value}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  {state.fortType !== 'None' ? (
+                    <div className="form-group">
+                      <label>Fortification level</label>
+                      <select
+                        className="form-control"
+                        value={state.fortLevel}
+                        onChange={(e) =>
+                          update({
+                            fortLevel: e.currentTarget.value as FortLevel,
+                          })
+                        }
+                      >
+                        {fortLevels.map((value) => (
+                          <option value={value} key={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
           </div>
 
           <div className="col-md-6">
@@ -107,7 +156,9 @@ export class StatForm extends Component<Props> {
               <select
                 className="form-control"
                 value={state.experience}
-                disabled={state.type === 'Levies'}
+                disabled={
+                  state.type === 'Levies' || state.type === 'Fortification'
+                }
                 onChange={(e) =>
                   update({
                     experience: e.currentTarget.value as UnitExperience,
@@ -126,7 +177,9 @@ export class StatForm extends Component<Props> {
               <select
                 className="form-control"
                 value={state.equipment}
-                disabled={state.type === 'Levies'}
+                disabled={
+                  state.type === 'Levies' || state.type === 'Fortification'
+                }
                 onChange={(e) =>
                   update({
                     equipment: e.currentTarget.value as UnitEquipment,
@@ -145,6 +198,9 @@ export class StatForm extends Component<Props> {
               <select
                 className="form-control"
                 value={state.size}
+                disabled={
+                  state.type === 'Fortification' && state.fortType !== 'None'
+                }
                 onChange={(e) =>
                   update({
                     size: e.currentTarget.value as UnitSize,

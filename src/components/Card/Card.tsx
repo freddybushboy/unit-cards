@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { UnitData } from '../../types/units';
+import { UnitData, FortLevel, FortType } from '../../types/units';
 import { CardTable } from './CardTable';
 import { CardFlags } from '../CardFlags/CardFlags';
-import { ancestryStats } from '../../fixtures/unitStats';
+import { ancestryStats, fortMorale } from '../../fixtures/unitStats';
 import { traitData, TraitData, CustomTrait } from '../../fixtures/traits';
 import ne from './corner-ne.png';
 import se from './corner-se.png';
@@ -33,6 +33,23 @@ const AlwaysDiminished = () => (
 const SiegeEngine = () => (
   <Trait trait={traitData.find((data) => data.name === 'Siege Engine')} />
 );
+const Fortification = ({
+  type,
+  level,
+}: {
+  type: FortType;
+  level: FortLevel;
+}) => (
+  <Trait
+    trait={{
+      name: 'Fortification',
+      description: `Units defending this structure gain +${
+        fortMorale[type][level]
+      } Morale.`,
+      cost: 0,
+    }}
+  />
+);
 
 export class Card extends Component<Props> {
   render() {
@@ -49,6 +66,8 @@ export class Card extends Component<Props> {
       toughness,
       morale,
       cost,
+      fortType,
+      fortLevel,
       selectedTraits,
       ancestryOverride,
     } = this.props.unitData;
@@ -78,6 +97,10 @@ export class Card extends Component<Props> {
                   : ancestry}{' '}
                 {type}
               </div>
+            ) : type === 'Fortification' ? (
+              <div className="card-type">{`${
+                fortType !== 'None' ? `${fortLevel} level ` : ''
+              }${type}${fortType !== 'None' ? ` (${fortType})` : ''}`}</div>
             ) : (
               <div className="card-type">
                 {ancestryOverride
@@ -101,7 +124,9 @@ export class Card extends Component<Props> {
               toughness={toughness}
               morale={morale}
             />
-            {ancestryStats[ancestry].traits.length ||
+            {(ancestryStats[ancestry].traits.length &&
+              type !== 'Fortification') ||
+            (type == 'Fortification' && fortType !== 'None') ||
             selectedTraits.length ||
             type === 'Cavalry' ||
             type === 'Siege Engine' ||
@@ -109,12 +134,14 @@ export class Card extends Component<Props> {
               <>
                 <div className="card-traits">Traits</div>
 
-                {ancestryStats[ancestry].traits.map((trait) => (
-                  <Trait
-                    trait={traitData.find((t) => t.name === trait)}
-                    key={`ancestry-${trait}`}
-                  />
-                ))}
+                {type === 'Fortification'
+                  ? null
+                  : ancestryStats[ancestry].traits.map((trait) => (
+                      <Trait
+                        trait={traitData.find((t) => t.name === trait)}
+                        key={`ancestry-${trait}`}
+                      />
+                    ))}
                 {selectedTraits.map((trait) => (
                   <div key={`parent-${trait}`}>
                     {traitData.find((t) => t.name === trait.value) ? (
@@ -135,6 +162,9 @@ export class Card extends Component<Props> {
             {type === 'Cavalry' && <Charge />}
             {type === 'Levies' && <AlwaysDiminished />}
             {type === 'Siege Engine' && <SiegeEngine />}
+            {type === 'Fortification' && fortType !== 'None' && (
+              <Fortification type={fortType} level={fortLevel} />
+            )}
           </div>
         </div>
       </div>

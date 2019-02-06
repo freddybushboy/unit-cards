@@ -17,6 +17,7 @@ import forkImg from './assets/fork.svg';
 import catapultImg from './assets/catapult.svg';
 import wingImg from './assets/wing.svg';
 import horseshoeImg from './assets/horseshoe.svg';
+import towerImg from './assets/tower.svg';
 import bugbearImg from './assets/ancestry/bugbear.jpg';
 import dragonbornImg from './assets/ancestry/dragonborn.jpg';
 import dwarfImg from './assets/ancestry/dwarf.jpg';
@@ -146,10 +147,21 @@ const TypeFlag = ({
 );
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
-    <AncestryFlag
-      ancestry={ancestry}
-      experience={type !== 'Levies' ? experience : 'Green'}
-    />
-    <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
+    {type === 'Fortification' ? (
+      <div className="fort-flag">
+        <img src={towerImg} />
+      </div>
+    ) : (
+      <>
+        <AncestryFlag
+          ancestry={ancestry}
+          experience={type !== 'Levies' ? experience : 'Green'}
+        />
+        <TypeFlag
+          equipment={type !== 'Levies' ? equipment : 'Light'}
+          type={type}
+        />
+      </>
+    )}
   </>
 );

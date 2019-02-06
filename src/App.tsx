@@ -8,6 +8,8 @@ import {
   UnitEquipment,
   UnitSize,
   UnitData,
+  FortLevel,
+  FortType,
 } from './types/units';
 import { StatForm } from './components/StatForm/StatForm';
 import {
@@ -18,9 +20,7 @@ import {
   morale,
   cost,
 } from './utils/statCalculator';
-import { Trait } from './types/traits';
 import { CustomTrait, traitData, TraitData } from './fixtures/traits';
-import { ValueType } from 'react-select/lib/types';
 import { Collapse } from './components/Collapse/Collapse';
 import {
   unitAncestries,
@@ -28,7 +28,10 @@ import {
   unitExperiences,
   unitEquipments,
   unitSizes,
+  fortTypes,
+  fortLevels,
 } from './fixtures/units';
+import { fortSize } from './fixtures/unitStats';
 
 export interface State {
   name: string;
@@ -43,6 +46,8 @@ export interface State {
   power: number;
   toughness: number;
   morale: number;
+  fortLevel: FortLevel;
+  fortType: FortType;
   cost: number;
   ancestryOverride: string;
   traitName: string;
@@ -66,6 +71,8 @@ class App extends Component<{}, State> {
     power: 0,
     toughness: 0,
     morale: 0,
+    fortLevel: '1st' as FortLevel,
+    fortType: 'None' as FortType,
     cost: 0,
     ancestryOverride: '',
     traitName: '',
@@ -87,7 +94,7 @@ class App extends Component<{}, State> {
       name: 'Random Unit',
       ancestry:
         unitAncestries[Math.floor(Math.random() * unitAncestries.length)],
-      type: unitTypes[Math.floor(Math.random() * unitTypes.length)],
+      type: unitTypes[Math.floor(Math.random() * (unitTypes.length - 1))], // No fortifications.
       experience:
         unitExperiences[Math.floor(Math.random() * unitExperiences.length)],
       equipment:
@@ -105,6 +112,10 @@ class App extends Component<{}, State> {
       toughness: toughness(this.state),
       morale: morale(this.state),
       cost: cost(this.state),
+      size:
+        this.state.type === 'Fortification' && this.state.fortType !== 'None'
+          ? (fortSize[this.state.fortType][this.state.fortLevel] as UnitSize)
+          : this.state.size,
     };
   };
 
@@ -173,6 +184,8 @@ class App extends Component<{}, State> {
       power,
       toughness,
       morale,
+      fortLevel,
+      fortType,
       cost,
       ancestryOverride,
       savedUnits,
@@ -195,6 +208,8 @@ class App extends Component<{}, State> {
             power,
             toughness,
             morale,
+            fortLevel,
+            fortType,
             cost,
             ancestryOverride,
           },
@@ -258,7 +273,7 @@ class App extends Component<{}, State> {
                 <Collapse title="Saved units...">
                   <ul className="list-group">
                     {this.state.savedUnits.map((unit) => (
-                      <li className="list-group-item">
+                      <li className="list-group-item" key={unit.name}>
                         {unit.name}{' '}
                         {this.traitsMissing(unit) ? (
                           <span className="text-danger">

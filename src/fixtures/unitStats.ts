@@ -1,4 +1,4 @@
-import { UnitAncestry } from '../types/units';
+import { UnitAncestry, UnitSize } from '../types/units';
 import { Trait } from '../types/traits';
 
 interface StatBlock {
@@ -317,6 +317,14 @@ export const typeStats: { [k: string]: TypeStatBlock } = {
     morale: 3,
     costMultiplier: 2,
   },
+  Fortification: {
+    attack: 0,
+    power: 0,
+    defense: 0,
+    toughness: 0,
+    morale: 0,
+    costMultiplier: 1,
+  },
 };
 
 interface SizeStatBlock {
@@ -328,4 +336,91 @@ export const sizeStats: { [k: string]: SizeStatBlock } = {
   d8: { costMultiplier: 1.33 },
   d10: { costMultiplier: 1.66 },
   d12: { costMultiplier: 2 },
+  d20: { costMultiplier: 2.33 },
+};
+
+interface FortNumberBlock {
+  [k: string]: number;
+}
+
+export const fortToughness: { [k: string]: FortNumberBlock } = {
+  None: {
+    '1st': 10, // This is madey-upy.
+    '2nd': 10,
+    '3rd': 10,
+    '4th': 10,
+    '5th': 10,
+  },
+  Keep: {
+    '1st': 22,
+    '2nd': 24,
+    '3rd': 26,
+    '4th': 28,
+    '5th': 30,
+  },
+  Tower: {
+    '1st': 18,
+    '2nd': 20,
+    '3rd': 22,
+    '4th': 24,
+    '5th': 26,
+  },
+  Temple: {
+    '1st': 18,
+    '2nd': 20,
+    '3rd': 22,
+    '4th': 24,
+    '5th': 26,
+  },
+};
+
+interface FortSizeBlock {
+  [k: string]: UnitSize;
+}
+export const fortSize: { [k: string]: FortSizeBlock } = {
+  Keep: {
+    '1st': 'd6',
+    '2nd': 'd8',
+    '3rd': 'd10',
+    '4th': 'd12',
+    '5th': 'd20',
+  },
+  Tower: {
+    '1st': 'd4',
+    '2nd': 'd6',
+    '3rd': 'd8',
+    '4th': 'd10',
+    '5th': 'd12',
+  },
+  Temple: {
+    '1st': 'd4',
+    '2nd': 'd6',
+    '3rd': 'd8',
+    '4th': 'd10',
+    '5th': 'd12',
+  },
+};
+
+export const fortMorale: { [k: string]: FortNumberBlock } = {
+  Keep: {
+    '1st': 2,
+    '2nd': 4,
+    '3rd': 6,
+    '4th': 8,
+    '5th': 10,
+  },
+  Tower: {
+    '1st': 1,
+    '2nd': 2,
+    '3rd': 3,
+    '4th': 4,
+    '5th': 5,
+  },
+  Temple: {
+    '1st': 1,
+    '2nd': 2,
+    '3rd': 3,
+    '4th': 4,
+    '5th': 5,
+  },
 };

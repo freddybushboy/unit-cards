@@ -29,7 +29,8 @@ export type UnitType =
   | 'Cavalry'
   | 'Levies'
   | 'Infantry'
-  | 'Siege Engine';
+  | 'Siege Engine'
+  | 'Fortification';
 export type UnitExperience =
   | 'Green'
   | 'Regular'
@@ -38,7 +39,9 @@ export type UnitExperience =
   | 'Elite'
   | 'Super-Elite';
 export type UnitEquipment = 'Light' | 'Medium' | 'Heavy' | 'Super-Heavy';
-export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12';
+export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12' | 'd20';
+export type FortLevel = '1st' | '2nd' | '3rd' | '4th' | '5th';
+export type FortType = 'Keep' | 'Tower' | 'Temple' | 'None';
 
 export interface UnitStats {
   attack: number;
@@ -54,6 +57,8 @@ export interface UnitData extends UnitStats {
   type: UnitType;
   experience: UnitExperience;
   equipment: UnitEquipment;
+  fortLevel: FortLevel;
+  fortType: FortType;
   cost: number;
   selectedTraits: { value: string }[];
   ancestryOverride: string;
