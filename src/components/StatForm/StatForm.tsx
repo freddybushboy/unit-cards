@@ -89,6 +89,81 @@ export class StatForm extends Component<Props> {
               </select>
             </div>
             <div className="form-group">
+              <label>Equipment</label>
+              <select
+                className="form-control"
+                value={state.equipment}
+                disabled={
+                  state.type === 'Levies' || state.type === 'Fortification'
+                }
+                onChange={(e) =>
+                  update({
+                    equipment: e.currentTarget.value as UnitEquipment,
+                  })
+                }
+              >
+                {unitEquipments.map((value) => (
+                  <option value={value} key={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Size</label>
+              <select
+                className="form-control"
+                value={state.size}
+                disabled={
+                  state.type === 'Fortification' && state.fortType !== 'None'
+                }
+                onChange={(e) =>
+                  update({
+                    size: e.currentTarget.value as UnitSize,
+                  })
+                }
+              >
+                {unitSizes.map((value) => (
+                  <option value={value} key={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <div className="form-group">
+              <label>Commander</label>
+              <input
+                type="text"
+                className="form-control"
+                value={state.commander}
+                onChange={(e) => update({ commander: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label>Experience</label>
+              <select
+                className="form-control"
+                value={state.experience}
+                disabled={
+                  state.type === 'Levies' || state.type === 'Fortification'
+                }
+                onChange={(e) =>
+                  update({
+                    experience: e.currentTarget.value as UnitExperience,
+                  })
+                }
+              >
+                {unitExperiences.map((value) => (
+                  <option value={value} key={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
               <label>Type</label>
               <select
                 className="form-control"
@@ -148,72 +223,6 @@ export class StatForm extends Component<Props> {
                 </div>
               </div>
             ) : null}
-          </div>
-
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Experience</label>
-              <select
-                className="form-control"
-                value={state.experience}
-                disabled={
-                  state.type === 'Levies' || state.type === 'Fortification'
-                }
-                onChange={(e) =>
-                  update({
-                    experience: e.currentTarget.value as UnitExperience,
-                  })
-                }
-              >
-                {unitExperiences.map((value) => (
-                  <option value={value} key={value}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Equipment</label>
-              <select
-                className="form-control"
-                value={state.equipment}
-                disabled={
-                  state.type === 'Levies' || state.type === 'Fortification'
-                }
-                onChange={(e) =>
-                  update({
-                    equipment: e.currentTarget.value as UnitEquipment,
-                  })
-                }
-              >
-                {unitEquipments.map((value) => (
-                  <option value={value} key={value}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Size</label>
-              <select
-                className="form-control"
-                value={state.size}
-                disabled={
-                  state.type === 'Fortification' && state.fortType !== 'None'
-                }
-                onChange={(e) =>
-                  update({
-                    size: e.currentTarget.value as UnitSize,
-                  })
-                }
-              >
-                {unitSizes.map((value) => (
-                  <option value={value} key={value}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
 

@@ -35,6 +35,7 @@ import { fortSize } from './fixtures/unitStats';
 
 export interface State {
   name: string;
+  commander: string;
   ancestry: UnitAncestry;
   type: UnitType;
   experience: UnitExperience;
@@ -60,6 +61,7 @@ export interface State {
 class App extends Component<{}, State> {
   state = {
     name: 'Unit Name',
+    commander: '',
     ancestry: 'Human' as UnitAncestry,
     type: 'Infantry' as UnitType,
     experience: 'Regular' as UnitExperience,
@@ -173,6 +175,7 @@ class App extends Component<{}, State> {
   saveUnit = () => {
     const {
       name,
+      commander,
       ancestry,
       type,
       experience,
@@ -197,6 +200,7 @@ class App extends Component<{}, State> {
           ...savedUnits.filter((u) => u.name !== name),
           {
             name,
+            commander,
             ancestry,
             type,
             experience,

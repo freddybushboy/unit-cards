@@ -55,6 +55,7 @@ export class Card extends Component<Props> {
   render() {
     const {
       name,
+      commander,
       ancestry,
       experience,
       equipment,
@@ -166,6 +167,9 @@ export class Card extends Component<Props> {
             {type === 'Fortification' && fortType !== 'None' && (
               <Fortification type={fortType} level={fortLevel} />
             )}
+            {commander ? (
+              <div className="commander">Commanded by {commander}</div>
+            ) : null}
           </div>
         </div>
       </div>

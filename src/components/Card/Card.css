@@ -81,3 +81,8 @@
   text-align: right;
   text-transform: uppercase;
 }
+.commander {
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+}
