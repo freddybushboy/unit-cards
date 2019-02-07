@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/elf.cc448cd7.jpg"
   },
   {
-    "revision": "125fbca647bbd0a1b16d",
+    "revision": "d3508489a4bd78935eac",
     "url": "/unit-cards/static/css/main.ba6b0154.chunk.css"
   },
   {
@@ -64,8 +64,8 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/media/dwarf.00a8dc47.jpg"
   },
   {
-    "revision": "125fbca647bbd0a1b16d",
-    "url": "/unit-cards/static/js/main.125fbca6.chunk.js"
+    "revision": "d3508489a4bd78935eac",
+    "url": "/unit-cards/static/js/main.d3508489.chunk.js"
   },
   {
     "revision": "ad6ffda21e01c405bfb79de5cba3210c",
@@ -124,7 +124,7 @@ self.__precacheManifest = [
     "url": "/unit-cards/static/css/1.ae55f346.chunk.css"
   },
   {
-    "revision": "bd9662e6c2c767d488815e9bbb162ce6",
+    "revision": "a460cf75da49268072b1017eabc8439d",
     "url": "/unit-cards/index.html"
   }
 ];
