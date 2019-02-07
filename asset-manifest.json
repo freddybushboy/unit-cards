@@ -1,7 +1,7 @@
 {
-  "main.css": "/unit-cards/static/css/main.8168f15c.chunk.css",
-  "main.js": "/unit-cards/static/js/main.854099af.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.854099af.chunk.js.map",
+  "main.css": "/unit-cards/static/css/main.ba6b0154.chunk.css",
+  "main.js": "/unit-cards/static/js/main.125fbca6.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.125fbca6.chunk.js.map",
   "static/css/1.ae55f346.chunk.css": "/unit-cards/static/css/1.ae55f346.chunk.css",
   "static/js/1.c5ab96ca.chunk.js": "/unit-cards/static/js/1.c5ab96ca.chunk.js",
   "static/js/1.c5ab96ca.chunk.js.map": "/unit-cards/static/js/1.c5ab96ca.chunk.js.map",
@@ -33,9 +33,9 @@
   "static/media/treant.jpg": "/unit-cards/static/media/treant.08061c49.jpg",
   "static/media/troll.jpg": "/unit-cards/static/media/troll.98b35916.jpg",
   "static/media/zombie.jpg": "/unit-cards/static/media/zombie.7fef1448.jpg",
+  "static/css/main.ba6b0154.chunk.css.map": "/unit-cards/static/css/main.ba6b0154.chunk.css.map",
   "static/css/1.ae55f346.chunk.css.map": "/unit-cards/static/css/1.ae55f346.chunk.css.map",
-  "static/css/main.8168f15c.chunk.css.map": "/unit-cards/static/css/main.8168f15c.chunk.css.map",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.f622e86c8494e97f3f91c7d56de1f61a.js": "/unit-cards/precache-manifest.f622e86c8494e97f3f91c7d56de1f61a.js",
+  "precache-manifest.b63a91c1ffd1ae41f8b955bdb50f3918.js": "/unit-cards/precache-manifest.b63a91c1ffd1ae41f8b955bdb50f3918.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }
