@@ -55,6 +55,7 @@ export interface UnitStats {
 export interface UnitData extends UnitStats {
   name: string;
   commander: string;
+  border: string;
   ancestry: UnitAncestry;
   experience: UnitExperience;
   equipment: UnitEquipment;

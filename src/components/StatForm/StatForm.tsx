@@ -397,6 +397,25 @@ export class StatForm extends Component<Props> {
                   onChange={(e) => update({ cost: Number(e.target.value) })}
                 />
               </div>
+              <div className="form-group">
+                <label>Border color override</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={state.border}
+                  onChange={(e) => update({ border: e.target.value })}
+                />
+                <small className="form-text">
+                  List of{' '}
+                  <a
+                    href="https://www.w3schools.com/cssref/css_colors.asp"
+                    target="_blank"
+                  >
+                    CSS Colors
+                  </a>
+                  .
+                </small>
+              </div>
             </div>
           </div>
         </Collapse>

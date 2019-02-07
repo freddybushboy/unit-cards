@@ -28,14 +28,13 @@ import {
   unitExperiences,
   unitEquipments,
   unitSizes,
-  fortTypes,
-  fortLevels,
 } from './fixtures/units';
 import { fortSize } from './fixtures/unitStats';
 
 export interface State {
   name: string;
   commander: string;
+  border: string;
   ancestry: UnitAncestry;
   type: UnitType;
   experience: UnitExperience;
@@ -62,6 +61,7 @@ class App extends Component<{}, State> {
   state = {
     name: 'Unit Name',
     commander: '',
+    border: '',
     ancestry: 'Human' as UnitAncestry,
     type: 'Infantry' as UnitType,
     experience: 'Regular' as UnitExperience,
@@ -176,6 +176,7 @@ class App extends Component<{}, State> {
     const {
       name,
       commander,
+      border,
       ancestry,
       type,
       experience,
@@ -201,6 +202,7 @@ class App extends Component<{}, State> {
           {
             name,
             commander,
+            border,
             ancestry,
             type,
             experience,

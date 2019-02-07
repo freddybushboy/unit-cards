@@ -56,6 +56,7 @@ export class Card extends Component<Props> {
     const {
       name,
       commander,
+      border,
       ancestry,
       experience,
       equipment,
@@ -74,7 +75,11 @@ export class Card extends Component<Props> {
     } = this.props.unitData;
 
     return (
-      <div className="unit-card" id="card">
+      <div
+        className="unit-card"
+        id="card"
+        style={border ? { borderColor: border } : {}}
+      >
         <img src={ne} className="card-corner-ne" />
         <img src={se} className="card-corner-se" />
         <img src={sw} className="card-corner-sw" />
