@@ -4,13 +4,11 @@ import lightImg from './assets/light.png';
 import mediumImg from './assets/medium.png';
 import heavyImg from './assets/heavy.png';
 import superheavyImg from './assets/super-heavy.png';
-import greenImg from './assets/ancestry-green.png';
-import regularImg from './assets/ancestry-regular.png';
-import seasonedImg from './assets/ancestry-seasoned.png';
-import veteranImg from './assets/ancestry-veteran.png';
-import eliteImg from './assets/ancestry-elite.png';
-import supereliteImg from './assets/ancestry-super-elite.png';
-import starImg from './assets/star.png';
+import regularImg from './assets/experience/regular.png';
+import seasonedImg from './assets/experience/seasoned.png';
+import veteranImg from './assets/experience/veteran.png';
+import eliteImg from './assets/experience/elite.png';
+import supereliteImg from './assets/experience/super-elite.png';
 import bowImg from './assets/bow.svg';
 import swordImg from './assets/sword.svg';
 import forkImg from './assets/fork.svg';
@@ -18,24 +16,14 @@ import catapultImg from './assets/catapult.svg';
 import wingImg from './assets/wing.svg';
 import horseshoeImg from './assets/horseshoe.svg';
 import towerImg from './assets/tower.svg';
-import bugbearImg from './assets/ancestry/bugbear.jpg';
-import dragonbornImg from './assets/ancestry/dragonborn.jpg';
-import dwarfImg from './assets/ancestry/dwarf.jpg';
-import elfImg from './assets/ancestry/elf.jpg';
-import ghoulImg from './assets/ancestry/ghoul.jpg';
-import gnollImg from './assets/ancestry/gnoll.jpg';
-import gnomeImg from './assets/ancestry/gnome.jpg';
-import goblinImg from './assets/ancestry/goblin.jpg';
-import hobgoblinImg from './assets/ancestry/hobgoblin.jpg';
-import humanImg from './assets/ancestry/human.jpg';
-import koboldImg from './assets/ancestry/kobold.jpg';
-import lizardfolkImg from './assets/ancestry/lizardfolk.jpg';
-import ogreImg from './assets/ancestry/ogre.jpg';
-import orcImg from './assets/ancestry/orc.jpg';
-import skeletonImg from './assets/ancestry/skeleton.jpg';
-import treantImg from './assets/ancestry/treant.jpg';
-import trollImg from './assets/ancestry/troll.jpg';
-import zombieImg from './assets/ancestry/zombie.jpg';
+import dragonbornImg from './assets/ancestry/dragonborn.png';
+import dwarfImg from './assets/ancestry/dwarf.png';
+import elfImg from './assets/ancestry/elf.png';
+import humanImg from './assets/ancestry/human.png';
+import goblinoidImg from './assets/ancestry/goblinoid.png';
+import monsterousImg from './assets/ancestry/monsterous.png';
+import undeadImg from './assets/ancestry/undead.png';
+import specialImg from './assets/ancestry/special.png';
 
 import {
   UnitAncestry,
@@ -43,6 +31,7 @@ import {
   UnitEquipment,
   UnitExperience,
 } from '../../types/units';
+import { flagTypes } from '../../fixtures/units';
 
 interface Props {
   ancestry: UnitAncestry;
@@ -58,57 +47,36 @@ const AncestryFlag = ({
   ancestry: UnitAncestry;
 }) => (
   <div className="card-flag">
-    <img src={starImg} className="ancestry-icon" />
-    {ancestry === 'Bugbear' ? (
-      <img src={bugbearImg} className="ancestry-image" />
-    ) : ancestry === 'Dragonborn' ? (
-      <img src={dragonbornImg} className="ancestry-image" />
-    ) : ancestry === 'Dwarf' ? (
-      <img src={dwarfImg} className="ancestry-image" />
-    ) : ancestry === 'Elf' || ancestry === 'Elven (Winged)' ? (
-      <img src={elfImg} className="ancestry-image" />
-    ) : ancestry === 'Ghoul' ? (
-      <img src={ghoulImg} className="ancestry-image" />
-    ) : ancestry === 'Gnoll' ? (
-      <img src={gnollImg} className="ancestry-image" />
-    ) : ancestry === 'Gnome' ? (
-      <img src={gnomeImg} className="ancestry-image" />
-    ) : ancestry === 'Goblin' ? (
-      <img src={goblinImg} className="ancestry-image" />
-    ) : ancestry === 'Hobgoblin' ? (
-      <img src={hobgoblinImg} className="ancestry-image" />
-    ) : ancestry === 'Human' ? (
-      <img src={humanImg} className="ancestry-image" />
-    ) : ancestry === 'Kobold' ? (
-      <img src={koboldImg} className="ancestry-image" />
-    ) : ancestry === 'Lizardfolk' ? (
-      <img src={lizardfolkImg} className="ancestry-image" />
-    ) : ancestry === 'Ogre' ? (
-      <img src={ogreImg} className="ancestry-image" />
-    ) : ancestry === 'Orc' ? (
-      <img src={orcImg} className="ancestry-image" />
-    ) : ancestry === 'Skeleton' ? (
-      <img src={skeletonImg} className="ancestry-image" />
-    ) : ancestry === 'Treant' ? (
-      <img src={treantImg} className="ancestry-image" />
-    ) : ancestry === 'Troll' ? (
-      <img src={trollImg} className="ancestry-image" />
-    ) : ancestry === 'Zombie' ? (
-      <img src={zombieImg} className="ancestry-image" />
-    ) : null}
+    {flagTypes[ancestry] === 'Human' ? (
+      <img src={humanImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Dragonborn' ? (
+      <img src={dragonbornImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Dwarf' ? (
+      <img src={dwarfImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Elf' ? (
+      <img src={elfImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Undead' ? (
+      <img src={undeadImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Goblinoid' ? (
+      <img src={goblinoidImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Special' ? (
+      <img src={specialImg} className="ancestry-flag" />
+    ) : flagTypes[ancestry] === 'Monsterous' ? (
+      <img src={monsterousImg} className="ancestry-flag" />
+    ) : (
+      <img src={specialImg} className="ancestry-flag" />
+    )}
 
-    {experience === 'Green' ? (
-      <img src={greenImg} className="ancestry-flag" />
-    ) : experience === 'Regular' ? (
-      <img src={regularImg} className="ancestry-flag" />
+    {experience === 'Regular' ? (
+      <img src={regularImg} className="experience-flag" />
     ) : experience === 'Seasoned' ? (
-      <img src={seasonedImg} className="ancestry-flag" />
+      <img src={seasonedImg} className="experience-flag" />
     ) : experience === 'Veteran' ? (
-      <img src={veteranImg} className="ancestry-flag" />
+      <img src={veteranImg} className="experience-flag" />
     ) : experience === 'Elite' ? (
-      <img src={eliteImg} className="ancestry-flag" />
+      <img src={eliteImg} className="experience-flag" />
     ) : experience === 'Super-Elite' ? (
-      <img src={supereliteImg} className="ancestry-flag" />
+      <img src={supereliteImg} className="experience-flag" />
     ) : null}
   </div>
 );

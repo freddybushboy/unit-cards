@@ -43,6 +43,16 @@ export type UnitSize = 'd4' | 'd6' | 'd8' | 'd10' | 'd12' | 'd20';
 export type FortLevel = '1st' | '2nd' | '3rd' | '4th' | '5th';
 export type FortType = 'Keep' | 'Tower' | 'Temple' | 'None';
 
+export type FlagType =
+  | 'Human'
+  | 'Elf'
+  | 'Dwarf'
+  | 'Dragonborn'
+  | 'Goblinoid'
+  | 'Monsterous'
+  | 'Undead'
+  | 'Special';
+
 export interface UnitStats {
   attack: number;
   defense: number;

@@ -331,9 +331,10 @@ class App extends Component<{}, State> {
             Strongholds & Followers
           </a>
           .
-        </p>
-        <p>
+          <br />
           <small>
+            Iconography by Dan Connolly.
+            <br />
             An{' '}
             <a href="https://github.com/freddybushboy/unit-cards">
               open-source

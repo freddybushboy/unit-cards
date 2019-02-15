@@ -23,25 +23,15 @@
 .fort-flag img {
   max-width: 100%;
 }
-.ancestry-icon {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  width: 75%;
-  transform: translate(-50%, -50%);
-}
-.ancestry-image {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  width: 85%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid black;
-}
+.experience-flag,
 .ancestry-flag,
 .equipment-flag {
   width: 30px;
+}
+.experience-flag {
+  position: absolute;
+  top: 74px;
+  left: 0;
 }
 .type-icon {
   position: absolute;
