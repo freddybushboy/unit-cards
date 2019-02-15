@@ -45,10 +45,15 @@ const AncestryFlag = ({
   ancestry: UnitAncestry;
   type: UnitType;
 }) => (
-  <div
-    className={`card-flag ${type === 'Fortification' ? 'card-flag-fort' : ''}`}
-  >
-    {type === 'Fortification' ? null : flagTypes[ancestry] === 'Human' ? (
+  <div className="card-flag">
+    {type === 'Fortification' ? (
+      <img
+        src={fortificationImg}
+        className={`ancestry-flag ${
+          type === 'Fortification' ? 'ancestry-flag-fort' : ''
+        }`}
+      />
+    ) : flagTypes[ancestry] === 'Human' ? (
       <img src={humanImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Dragonborn' ? (
       <img src={dragonbornImg} className="ancestry-flag" />

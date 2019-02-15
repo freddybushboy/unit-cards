@@ -11,7 +11,7 @@ interface Props {
 }
 export const FortificationFlag = ({ equipment }: Props) => (
   <>
-    {equipment === 'Light' ? (
+    {/* {equipment === 'Light' ? (
       <img src={lightImg} className="type-flag" />
     ) : equipment === 'Medium' ? (
       <img src={mediumImg} className="type-flag" />
@@ -19,6 +19,6 @@ export const FortificationFlag = ({ equipment }: Props) => (
       <img src={heavyImg} className="type-flag" />
     ) : equipment === 'Super-Heavy' ? (
       <img src={superHeavyImg} className="type-flag" />
-    ) : null}
+    ) : null} */}
   </>
 );
