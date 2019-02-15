@@ -57,6 +57,19 @@ export interface State {
   savedUnits: UnitData[];
 }
 
+const saveAs = (uri: string, filename: string) => {
+  const link = document.createElement('a');
+  if (typeof link.download === 'string') {
+    link.href = uri;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    window.open(uri);
+  }
+};
+
 class App extends Component<{}, State> {
   state = {
     name: 'Unit Name',
@@ -121,14 +134,10 @@ class App extends Component<{}, State> {
     };
   };
 
-  generateImage() {
+  generateImage(name: string) {
     html2canvas(document.querySelector('#card') as HTMLElement).then(
       (canvas) => {
-        const imageSection = document.querySelector('#image-section');
-        if (imageSection) {
-          imageSection.innerHTML = '';
-          imageSection.appendChild(canvas);
-        }
+        saveAs(canvas.toDataURL(), `${name}.png`);
       },
     );
   }
@@ -315,8 +324,11 @@ class App extends Component<{}, State> {
               unitData={this.unitDataComputed()}
               savedTraits={this.state.savedTraits}
             />
-            <button className="btn btn-primary" onClick={this.generateImage}>
-              Generate Image
+            <button
+              className="btn btn-primary"
+              onClick={() => this.generateImage(this.state.name)}
+            >
+              Download
             </button>{' '}
             <button className="btn btn-primary" onClick={this.saveUnit}>
               Save Unit
