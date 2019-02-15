@@ -55,6 +55,7 @@ export interface State {
   traitCost: number | undefined;
   savedTraits: CustomTrait[];
   savedUnits: UnitData[];
+  downloadSupported: boolean;
 }
 
 class App extends Component<{}, State> {
@@ -82,12 +83,15 @@ class App extends Component<{}, State> {
     traitCost: undefined,
     savedTraits: [] as CustomTrait[],
     savedUnits: [] as UnitData[],
+    downloadSupported: false,
   };
 
   componentDidMount() {
+    const link = document.createElement('a');
     this.setState({
       savedTraits: JSON.parse(localStorage.getItem('savedTraits') || '[]'),
       savedUnits: JSON.parse(localStorage.getItem('savedUnits') || '[]'),
+      downloadSupported: typeof link.download === 'string',
     });
   }
 
