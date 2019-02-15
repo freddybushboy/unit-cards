@@ -1,15 +1,15 @@
 import React from 'react';
-import lightImg from './assets/type/cavalry-light.png';
-import mediumImg from './assets/type/cavalry-medium.png';
-import heavyImg from './assets/type/cavalry-heavy.png';
-import superHeavyImg from './assets/type/cavalry-super-heavy.png';
+import lightImg from './assets/type/siege-engine-light.png';
+import mediumImg from './assets/type/siege-engine-medium.png';
+import heavyImg from './assets/type/siege-engine-heavy.png';
+import superHeavyImg from './assets/type/siege-engine-super-heavy.png';
 
 import { UnitEquipment } from '../../types/units';
 
 interface Props {
   equipment: UnitEquipment;
 }
-export const CavalryFlag = ({ equipment }: Props) => (
+export const SiegeEngineFlag = ({ equipment }: Props) => (
   <>
     {equipment === 'Light' ? (
       <img src={lightImg} className="type-flag" />

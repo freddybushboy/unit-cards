@@ -10,15 +10,8 @@
   vertical-align: top;
   margin-right: 5px;
 }
-.fort-flag {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  padding: 20px;
-  border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  background: black;
+.card-flag-fort {
+  margin-left: -15px;
 }
 .fort-flag img {
   max-width: 100%;

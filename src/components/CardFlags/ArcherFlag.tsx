@@ -1,5 +1,4 @@
 import React from 'react';
-import './CardFlags.css';
 import lightImg from './assets/type/archer-light.png';
 import mediumImg from './assets/type/archer-medium.png';
 import heavyImg from './assets/type/archer-heavy.png';

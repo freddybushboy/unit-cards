@@ -14,6 +14,7 @@ import goblinoidImg from './assets/ancestry/goblinoid.png';
 import monsterousImg from './assets/ancestry/monsterous.png';
 import undeadImg from './assets/ancestry/undead.png';
 import specialImg from './assets/ancestry/special.png';
+import fortificationImg from './assets/ancestry/fortification.png';
 
 import {
   UnitAncestry,
@@ -25,6 +26,9 @@ import { flagTypes } from '../../fixtures/units';
 import { ArcherFlag } from './ArcherFlag';
 import { CavalryFlag } from './CavalryFlag';
 import { InfantryFlag } from './InfantryFlag';
+import { FlyingFlag } from './FlyingFlag';
+import { SiegeEngineFlag } from './SiegeEngineFlag';
+import { FortificationFlag } from './FortificationFlag';
 
 interface Props {
   ancestry: UnitAncestry;
@@ -35,12 +39,16 @@ interface Props {
 const AncestryFlag = ({
   experience,
   ancestry,
+  type,
 }: {
   experience: UnitExperience;
   ancestry: UnitAncestry;
+  type: UnitType;
 }) => (
-  <div className="card-flag">
-    {flagTypes[ancestry] === 'Human' ? (
+  <div
+    className={`card-flag ${type === 'Fortification' ? 'card-flag-fort' : ''}`}
+  >
+    {type === 'Fortification' ? null : flagTypes[ancestry] === 'Human' ? (
       <img src={humanImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Dragonborn' ? (
       <img src={dragonbornImg} className="ancestry-flag" />
@@ -86,18 +94,27 @@ const TypeFlag = ({
       <ArcherFlag equipment={equipment} />
     ) : type === 'Infantry' ? (
       <InfantryFlag equipment={equipment} />
-    ) : type === 'Siege Engine' ? null : type === 'Levies' ? (
+    ) : type === 'Siege Engine' ? (
+      <SiegeEngineFlag equipment={equipment} />
+    ) : type === 'Levies' ? (
       <img src={leviesImg} className="type-flag" />
     ) : type === 'Cavalry' ? (
       <CavalryFlag equipment={equipment} />
-    ) : type === 'Flying' ? null : null}
+    ) : type === 'Flying' ? (
+      <FlyingFlag equipment={equipment} />
+    ) : type === 'Fortification' ? (
+      <FortificationFlag equipment={equipment} />
+    ) : null}
   </div>
 );
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
     <AncestryFlag
       ancestry={ancestry}
-      experience={type !== 'Levies' ? experience : 'Green'}
+      type={type}
+      experience={
+        type !== 'Levies' && type !== 'Fortification' ? experience : 'Green'
+      }
     />
     <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
   </>
