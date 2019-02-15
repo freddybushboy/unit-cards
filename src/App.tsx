@@ -57,19 +57,6 @@ export interface State {
   savedUnits: UnitData[];
 }
 
-const saveAs = (uri: string, filename: string) => {
-  const link = document.createElement('a');
-  if (typeof link.download === 'string') {
-    link.href = uri;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  } else {
-    window.open(uri);
-  }
-};
-
 class App extends Component<{}, State> {
   state = {
     name: 'Unit Name',
@@ -137,7 +124,20 @@ class App extends Component<{}, State> {
   generateImage(name: string) {
     html2canvas(document.querySelector('#card') as HTMLElement).then(
       (canvas) => {
-        saveAs(canvas.toDataURL(), `${name}.png`);
+        const link = document.createElement('a');
+        if (typeof link.download === 'string') {
+          link.href = canvas.toDataURL();
+          link.download = `${name}.png`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          const imageSection = document.querySelector('#image-section');
+          if (imageSection) {
+            imageSection.innerHTML = '';
+            imageSection.appendChild(canvas);
+          }
+        }
       },
     );
   }
