@@ -1,15 +1,15 @@
 {
   "main.css": "/unit-cards/static/css/main.e47aaa83.chunk.css",
-  "main.js": "/unit-cards/static/js/main.b09e44ad.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.b09e44ad.chunk.js.map",
+  "main.js": "/unit-cards/static/js/main.037ae835.chunk.js",
+  "main.js.map": "/unit-cards/static/js/main.037ae835.chunk.js.map",
   "static/css/1.dade5acf.chunk.css": "/unit-cards/static/css/1.dade5acf.chunk.css",
   "static/js/1.59fdaa9f.chunk.js": "/unit-cards/static/js/1.59fdaa9f.chunk.js",
   "static/js/1.59fdaa9f.chunk.js.map": "/unit-cards/static/js/1.59fdaa9f.chunk.js.map",
   "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
   "runtime~main.js.map": "/unit-cards/static/js/runtime~main.b286fd5d.js.map",
-  "static/css/1.dade5acf.chunk.css.map": "/unit-cards/static/css/1.dade5acf.chunk.css.map",
   "static/css/main.e47aaa83.chunk.css.map": "/unit-cards/static/css/main.e47aaa83.chunk.css.map",
+  "static/css/1.dade5acf.chunk.css.map": "/unit-cards/static/css/1.dade5acf.chunk.css.map",
   "index.html": "/unit-cards/index.html",
-  "precache-manifest.1fa670f1dc17e26313b9afd41ed7c882.js": "/unit-cards/precache-manifest.1fa670f1dc17e26313b9afd41ed7c882.js",
+  "precache-manifest.ba16761116645e6187b9f9961b7fc5f3.js": "/unit-cards/precache-manifest.ba16761116645e6187b9f9961b7fc5f3.js",
   "service-worker.js": "/unit-cards/service-worker.js"
 }
