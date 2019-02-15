@@ -1,21 +1,11 @@
 import React from 'react';
 import './CardFlags.css';
-import lightImg from './assets/light.png';
-import mediumImg from './assets/medium.png';
-import heavyImg from './assets/heavy.png';
-import superheavyImg from './assets/super-heavy.png';
 import regularImg from './assets/experience/regular.png';
 import seasonedImg from './assets/experience/seasoned.png';
 import veteranImg from './assets/experience/veteran.png';
 import eliteImg from './assets/experience/elite.png';
 import supereliteImg from './assets/experience/super-elite.png';
-import bowImg from './assets/bow.svg';
-import swordImg from './assets/sword.svg';
-import forkImg from './assets/fork.svg';
-import catapultImg from './assets/catapult.svg';
-import wingImg from './assets/wing.svg';
-import horseshoeImg from './assets/horseshoe.svg';
-import towerImg from './assets/tower.svg';
+import leviesImg from './assets/type/levies.png';
 import dragonbornImg from './assets/ancestry/dragonborn.png';
 import dwarfImg from './assets/ancestry/dwarf.png';
 import elfImg from './assets/ancestry/elf.png';
@@ -32,6 +22,9 @@ import {
   UnitExperience,
 } from '../../types/units';
 import { flagTypes } from '../../fixtures/units';
+import { ArcherFlag } from './ArcherFlag';
+import { CavalryFlag } from './CavalryFlag';
+import { InfantryFlag } from './InfantryFlag';
 
 interface Props {
   ancestry: UnitAncestry;
@@ -90,46 +83,22 @@ const TypeFlag = ({
 }) => (
   <div className="card-flag">
     {type === 'Archers' ? (
-      <img src={bowImg} className="type-icon" />
+      <ArcherFlag equipment={equipment} />
     ) : type === 'Infantry' ? (
-      <img src={swordImg} className="type-icon" />
-    ) : type === 'Siege Engine' ? (
-      <img src={catapultImg} className="type-icon" />
-    ) : type === 'Levies' ? (
-      <img src={forkImg} className="type-icon" />
+      <InfantryFlag equipment={equipment} />
+    ) : type === 'Siege Engine' ? null : type === 'Levies' ? (
+      <img src={leviesImg} className="type-flag" />
     ) : type === 'Cavalry' ? (
-      <img src={horseshoeImg} className="type-icon" />
-    ) : type === 'Flying' ? (
-      <img src={wingImg} className="type-icon" />
-    ) : null}
-    {equipment === 'Light' ? (
-      <img src={lightImg} className="equipment-flag" />
-    ) : equipment === 'Medium' ? (
-      <img src={mediumImg} className="equipment-flag" />
-    ) : equipment === 'Heavy' ? (
-      <img src={heavyImg} className="equipment-flag" />
-    ) : equipment === 'Super-Heavy' ? (
-      <img src={superheavyImg} className="equipment-flag" />
-    ) : null}
+      <CavalryFlag equipment={equipment} />
+    ) : type === 'Flying' ? null : null}
   </div>
 );
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
-    {type === 'Fortification' ? (
-      <div className="fort-flag">
-        <img src={towerImg} />
-      </div>
-    ) : (
-      <>
-        <AncestryFlag
-          ancestry={ancestry}
-          experience={type !== 'Levies' ? experience : 'Green'}
-        />
-        <TypeFlag
-          equipment={type !== 'Levies' ? equipment : 'Light'}
-          type={type}
-        />
-      </>
-    )}
+    <AncestryFlag
+      ancestry={ancestry}
+      experience={type !== 'Levies' ? experience : 'Green'}
+    />
+    <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
   </>
 );
