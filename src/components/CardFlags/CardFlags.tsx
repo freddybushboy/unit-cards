@@ -14,7 +14,7 @@ import goblinoidImg from './assets/ancestry/goblinoid.png';
 import monsterousImg from './assets/ancestry/monsterous.png';
 import undeadImg from './assets/ancestry/undead.png';
 import specialImg from './assets/ancestry/special.png';
-import fortificationImg from './assets/ancestry/fortification.png';
+import fortificationImg from './assets/type/fortification.png';
 
 import {
   UnitAncestry,
@@ -46,14 +46,7 @@ const AncestryFlag = ({
   type: UnitType;
 }) => (
   <div className="card-flag">
-    {type === 'Fortification' ? (
-      <img
-        src={fortificationImg}
-        className={`ancestry-flag ${
-          type === 'Fortification' ? 'ancestry-flag-fort' : ''
-        }`}
-      />
-    ) : flagTypes[ancestry] === 'Human' ? (
+    {flagTypes[ancestry] === 'Human' ? (
       <img src={humanImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Dragonborn' ? (
       <img src={dragonbornImg} className="ancestry-flag" />
@@ -114,13 +107,22 @@ const TypeFlag = ({
 );
 export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
-    <AncestryFlag
-      ancestry={ancestry}
-      type={type}
-      experience={
-        type !== 'Levies' && type !== 'Fortification' ? experience : 'Green'
-      }
-    />
-    <TypeFlag equipment={type !== 'Levies' ? equipment : 'Light'} type={type} />
+    {type === 'Fortification' ? (
+      <div className="fort-flag">
+        <img src={fortificationImg} />
+      </div>
+    ) : (
+      <>
+        <AncestryFlag
+          ancestry={ancestry}
+          type={type}
+          experience={type !== 'Levies' ? experience : 'Green'}
+        />
+        <TypeFlag
+          equipment={type !== 'Levies' ? equipment : 'Light'}
+          type={type}
+        />
+      </>
+    )}
   </>
 );

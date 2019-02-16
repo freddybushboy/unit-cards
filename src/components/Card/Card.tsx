@@ -92,7 +92,11 @@ export class Card extends Component<Props> {
               equipment={equipment}
             />
           </div>
-          <div className="card-top">
+          <div
+            className={`card-top ${
+              type === 'Fortification' ? 'card-top-fort' : ''
+            }`}
+          >
             <div className="card-name">{name}</div>
             {type === 'Levies' ? (
               <div className="card-type">

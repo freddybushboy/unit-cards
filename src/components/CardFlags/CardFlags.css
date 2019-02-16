@@ -10,8 +10,9 @@
   vertical-align: top;
   margin-right: 5px;
 }
-.ancestry-flag-fort {
-  margin-left: 15px;
+.fort-flag {
+  margin-top: 25px;
+  width: 70px;
 }
 .fort-flag img {
   max-width: 100%;

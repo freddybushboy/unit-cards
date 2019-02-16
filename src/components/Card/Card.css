@@ -39,6 +39,9 @@
   padding-top: 10px;
   min-height: 90px;
 }
+.card-top-fort {
+  min-height: 75px;
+}
 .card-main {
   padding-bottom: 15px;
 }
