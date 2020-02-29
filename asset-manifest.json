@@ -1,15 +1,25 @@
 {
-  "main.css": "/unit-cards/static/css/main.745d708f.chunk.css",
-  "main.js": "/unit-cards/static/js/main.bed38b16.chunk.js",
-  "main.js.map": "/unit-cards/static/js/main.bed38b16.chunk.js.map",
-  "static/css/1.dade5acf.chunk.css": "/unit-cards/static/css/1.dade5acf.chunk.css",
-  "static/js/1.59fdaa9f.chunk.js": "/unit-cards/static/js/1.59fdaa9f.chunk.js",
-  "static/js/1.59fdaa9f.chunk.js.map": "/unit-cards/static/js/1.59fdaa9f.chunk.js.map",
-  "runtime~main.js": "/unit-cards/static/js/runtime~main.b286fd5d.js",
-  "runtime~main.js.map": "/unit-cards/static/js/runtime~main.b286fd5d.js.map",
-  "static/css/1.dade5acf.chunk.css.map": "/unit-cards/static/css/1.dade5acf.chunk.css.map",
-  "static/css/main.745d708f.chunk.css.map": "/unit-cards/static/css/main.745d708f.chunk.css.map",
-  "index.html": "/unit-cards/index.html",
-  "precache-manifest.df64fa3e3ba26fa09ec292c7e9e37f87.js": "/unit-cards/precache-manifest.df64fa3e3ba26fa09ec292c7e9e37f87.js",
-  "service-worker.js": "/unit-cards/service-worker.js"
+  "files": {
+    "main.css": "/unit-cards/static/css/main.54e0f7d9.chunk.css",
+    "main.js": "/unit-cards/static/js/main.cbb638c2.chunk.js",
+    "main.js.map": "/unit-cards/static/js/main.cbb638c2.chunk.js.map",
+    "runtime-main.js": "/unit-cards/static/js/runtime-main.00cfd872.js",
+    "runtime-main.js.map": "/unit-cards/static/js/runtime-main.00cfd872.js.map",
+    "static/css/2.0996cbbd.chunk.css": "/unit-cards/static/css/2.0996cbbd.chunk.css",
+    "static/js/2.a3f17c5e.chunk.js": "/unit-cards/static/js/2.a3f17c5e.chunk.js",
+    "static/js/2.a3f17c5e.chunk.js.map": "/unit-cards/static/js/2.a3f17c5e.chunk.js.map",
+    "index.html": "/unit-cards/index.html",
+    "precache-manifest.f638891828c4a513fc1b8aae9103de8c.js": "/unit-cards/precache-manifest.f638891828c4a513fc1b8aae9103de8c.js",
+    "service-worker.js": "/unit-cards/service-worker.js",
+    "static/css/2.0996cbbd.chunk.css.map": "/unit-cards/static/css/2.0996cbbd.chunk.css.map",
+    "static/css/main.54e0f7d9.chunk.css.map": "/unit-cards/static/css/main.54e0f7d9.chunk.css.map",
+    "static/js/2.a3f17c5e.chunk.js.LICENSE.txt": "/unit-cards/static/js/2.a3f17c5e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00cfd872.js",
+    "static/css/2.0996cbbd.chunk.css",
+    "static/js/2.a3f17c5e.chunk.js",
+    "static/css/main.54e0f7d9.chunk.css",
+    "static/js/main.cbb638c2.chunk.js"
+  ]
 }
