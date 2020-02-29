@@ -28,7 +28,6 @@ import { CavalryFlag } from './CavalryFlag';
 import { InfantryFlag } from './InfantryFlag';
 import { FlyingFlag } from './FlyingFlag';
 import { SiegeEngineFlag } from './SiegeEngineFlag';
-import { FortificationFlag } from './FortificationFlag';
 
 interface Props {
   ancestry: UnitAncestry;
@@ -47,35 +46,35 @@ const AncestryFlag = ({
 }) => (
   <div className="card-flag">
     {flagTypes[ancestry] === 'Human' ? (
-      <img src={humanImg} className="ancestry-flag" />
+      <img alt="" src={humanImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Dragonborn' ? (
-      <img src={dragonbornImg} className="ancestry-flag" />
+      <img alt="" src={dragonbornImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Dwarf' ? (
-      <img src={dwarfImg} className="ancestry-flag" />
+      <img alt="" src={dwarfImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Elf' ? (
-      <img src={elfImg} className="ancestry-flag" />
+      <img alt="" src={elfImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Undead' ? (
-      <img src={undeadImg} className="ancestry-flag" />
+      <img alt="" src={undeadImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Goblinoid' ? (
-      <img src={goblinoidImg} className="ancestry-flag" />
+      <img alt="" src={goblinoidImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Special' ? (
-      <img src={specialImg} className="ancestry-flag" />
+      <img alt="" src={specialImg} className="ancestry-flag" />
     ) : flagTypes[ancestry] === 'Monsterous' ? (
-      <img src={monsterousImg} className="ancestry-flag" />
+      <img alt="" src={monsterousImg} className="ancestry-flag" />
     ) : (
-      <img src={specialImg} className="ancestry-flag" />
+      <img alt="" src={specialImg} className="ancestry-flag" />
     )}
 
     {experience === 'Regular' ? (
-      <img src={regularImg} className="experience-flag" />
+      <img alt="" src={regularImg} className="experience-flag" />
     ) : experience === 'Seasoned' ? (
-      <img src={seasonedImg} className="experience-flag" />
+      <img alt="" src={seasonedImg} className="experience-flag" />
     ) : experience === 'Veteran' ? (
-      <img src={veteranImg} className="experience-flag" />
+      <img alt="" src={veteranImg} className="experience-flag" />
     ) : experience === 'Elite' ? (
-      <img src={eliteImg} className="experience-flag" />
+      <img alt="" src={eliteImg} className="experience-flag" />
     ) : experience === 'Super-Elite' ? (
-      <img src={supereliteImg} className="experience-flag" />
+      <img alt="" src={supereliteImg} className="experience-flag" />
     ) : null}
   </div>
 );
@@ -95,13 +94,11 @@ const TypeFlag = ({
     ) : type === 'Siege Engine' ? (
       <SiegeEngineFlag equipment={equipment} />
     ) : type === 'Levies' ? (
-      <img src={leviesImg} className="type-flag" />
+      <img alt="" src={leviesImg} className="type-flag" />
     ) : type === 'Cavalry' ? (
       <CavalryFlag equipment={equipment} />
     ) : type === 'Flying' ? (
       <FlyingFlag equipment={equipment} />
-    ) : type === 'Fortification' ? (
-      <FortificationFlag equipment={equipment} />
     ) : null}
   </div>
 );
@@ -109,7 +106,7 @@ export const CardFlags = ({ ancestry, type, equipment, experience }: Props) => (
   <>
     {type === 'Fortification' ? (
       <div className="fort-flag">
-        <img src={fortificationImg} />
+        <img alt="" src={fortificationImg} />
       </div>
     ) : (
       <>

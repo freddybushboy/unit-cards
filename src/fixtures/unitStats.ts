@@ -1,4 +1,4 @@
-import { UnitAncestry, UnitSize } from '../types/units';
+import { UnitSize } from '../types/units';
 import { Trait } from '../types/traits';
 
 interface StatBlock {
@@ -45,7 +45,7 @@ export const ancestryStats: { [k: string]: AncestryStatBlock } = {
     morale: 1,
     traits: ['Eternal'],
   },
-  ['Elven (Winged)']: {
+  'Elven (Winged)': {
     attack: 1,
     power: 1,
     defense: 0,
@@ -211,7 +211,7 @@ export const experienceStats: { [k: string]: StatBlock } = {
     toughness: 2,
     morale: 4,
   },
-  ['Super-Elite']: {
+  'Super-Elite': {
     attack: 2,
     power: 0,
     defense: 0,
@@ -249,7 +249,7 @@ export const equipmentStats: { [k: string]: StatBlock } = {
     toughness: 0,
     morale: 0,
   },
-  ['Super-Heavy']: {
+  'Super-Heavy': {
     attack: 0,
     power: 6,
     defense: 6,
@@ -293,7 +293,7 @@ export const typeStats: { [k: string]: TypeStatBlock } = {
     morale: 2,
     costMultiplier: 1.5,
   },
-  ['Siege Engine']: {
+  'Siege Engine': {
     attack: 1,
     power: 1,
     defense: 0,

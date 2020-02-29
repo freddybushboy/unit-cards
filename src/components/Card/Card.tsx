@@ -43,9 +43,7 @@ const Fortification = ({
   <Trait
     trait={{
       name: 'Fortification',
-      description: `Units defending this structure gain +${
-        fortMorale[type][level]
-      } Morale.`,
+      description: `Units defending this structure gain +${fortMorale[type][level]} Morale.`,
       cost: 0,
     }}
   />
@@ -80,9 +78,9 @@ export class Card extends Component<Props> {
         id="card"
         style={border ? { borderColor: border } : {}}
       >
-        <img src={ne} className="card-corner-ne" />
-        <img src={se} className="card-corner-se" />
-        <img src={sw} className="card-corner-sw" />
+        <img alt="" src={ne} className="card-corner-ne" />
+        <img alt="" src={se} className="card-corner-se" />
+        <img alt="" src={sw} className="card-corner-sw" />
         <div className="card-inner">
           <div className="card-flags">
             <CardFlags
@@ -137,7 +135,7 @@ export class Card extends Component<Props> {
             />
             {(ancestryStats[ancestry].traits.length &&
               type !== 'Fortification') ||
-            (type == 'Fortification' && fortType !== 'None') ||
+            (type === 'Fortification' && fortType !== 'None') ||
             selectedTraits.length ||
             type === 'Cavalry' ||
             type === 'Siege Engine' ||

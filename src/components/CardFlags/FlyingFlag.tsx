@@ -12,13 +12,13 @@ interface Props {
 export const FlyingFlag = ({ equipment }: Props) => (
   <>
     {equipment === 'Light' ? (
-      <img src={lightImg} className="type-flag" />
+      <img alt="" src={lightImg} className="type-flag" />
     ) : equipment === 'Medium' ? (
-      <img src={mediumImg} className="type-flag" />
+      <img alt="" src={mediumImg} className="type-flag" />
     ) : equipment === 'Heavy' ? (
-      <img src={heavyImg} className="type-flag" />
+      <img alt="" src={heavyImg} className="type-flag" />
     ) : equipment === 'Super-Heavy' ? (
-      <img src={superHeavyImg} className="type-flag" />
+      <img alt="" src={superHeavyImg} className="type-flag" />
     ) : null}
   </>
 );

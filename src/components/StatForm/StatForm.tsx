@@ -21,7 +21,6 @@ import {
   fortTypes,
 } from '../../fixtures/units';
 import { Collapse } from '../Collapse/Collapse';
-import { Trait } from '../../types/traits';
 import { traitData } from '../../fixtures/traits';
 import Select from 'react-select';
 import { ValueType } from 'react-select/lib/types';
@@ -410,6 +409,7 @@ export class StatForm extends Component<Props> {
                   <a
                     href="https://www.w3schools.com/cssref/css_colors.asp"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     CSS Colors
                   </a>

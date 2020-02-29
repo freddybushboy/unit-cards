@@ -9,7 +9,6 @@ import {
   fortSize,
 } from '../fixtures/unitStats';
 import { traitData } from '../fixtures/traits';
-import { Trait } from '../types/traits';
 
 export const attack = (state: State): number => {
   return state.type === 'Fortification'
