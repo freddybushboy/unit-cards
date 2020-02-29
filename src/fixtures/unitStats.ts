@@ -26,7 +26,7 @@ export const ancestryStats: { [k: string]: AncestryStatBlock } = {
     power: 2,
     defense: 1,
     toughness: 1,
-    morale: 2,
+    morale: 1,
     traits: ['Courageous'],
   },
   Dwarf: {
