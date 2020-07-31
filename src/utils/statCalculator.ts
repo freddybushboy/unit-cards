@@ -83,7 +83,7 @@ export const cost = (state: State): number => {
     morale(state) * 2;
 
   cost = cost * typeStats[state.type].costMultiplier;
-  if (state.type !== 'Fortification' && state.fortType !== 'None') {
+  if (state.type === 'Fortification' && state.fortType !== 'None') {
     cost =
       cost *
       sizeStats[fortSize[state.fortType][state.fortLevel]].costMultiplier;
