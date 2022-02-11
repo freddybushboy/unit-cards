@@ -261,6 +261,59 @@ class App extends Component<{}, State> {
     );
   };
 
+  downloadSavedUnits = () => {
+    var images = [/*
+      {
+        canvas: canvas with image,
+        name: name of the destination file,
+      }
+    */];
+    
+    this.state.savedUnits.forEach(
+      (unitState) => {
+        // generate a card for the unit state
+        const detachedDiv = document.createElement('div');
+        var card = (<Card unitData={unitState} savedTraits={this.state.savedTraits} />);
+        ReactDOM.render(card, detachedDiv);
+        html2canvas(detachedDiv as HTMLElement).then(
+          (canvas) => {
+            const imageUrl = canvas.toDataURL('image/png');
+            images.append({
+              url: imageUrl,
+              name: unitState.name,
+            });
+          },
+        );
+        // click the link
+      }
+    );
+    // TODO: install JSZip
+    var zip = new JSZip();
+    var img = zip.folder("images");
+  };
+
+  /**
+  * Used to convert base64/URLEncoded data component to raw binary data held in a string
+  */
+  dataURItoBlob = (dataURI) {
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(dataURI.split(',')[1]);
+    else
+        byteString = unescape(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ia], {type:mimeString});
+  };
+
   traitsMissing = (unit: UnitData) => {
     return unit.selectedTraits.some(
       (trait) =>
@@ -291,6 +344,12 @@ class App extends Component<{}, State> {
               <div className="text-left saved-units">
                 <Collapse title="Saved units...">
                   <ul className="list-group">
+                    <button
+                      className="btn btn-sm btn-primary float-right mr-1"
+                      onClick={() => this.downloadSaveUnits()}
+                    >
+                      Download Saved Units
+                    </button>
                     {this.state.savedUnits.map((unit) => (
                       <li className="list-group-item" key={unit.name}>
                         {unit.name}{' '}
