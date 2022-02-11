@@ -15,7 +15,8 @@
     "react-dom": "^16.7.0",
     "react-scripts": "^3.4.0",
     "react-select": "^2.3.0",
-    "typescript": "3.3.1"
+    "typescript": "3.3.1",
+    "jszip": "3.7.1",
   },
   "scripts": {
     "start": "react-scripts start",
