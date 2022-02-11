@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import html2canvas from 'html2canvas';
+import jszip from 'jszip';
+import { saveAs } from 'file-saver';
 import { Card } from './components/Card/Card';
 import {
   UnitAncestry,
@@ -262,12 +264,9 @@ class App extends Component<{}, State> {
   };
 
   downloadSavedUnits = () => {
-    var images = [/*
-      {
-        canvas: canvas with image,
-        name: name of the destination file,
-      }
-    */];
+    
+    var zip = new JSZip();
+    var img = zip.folder("images");
     
     this.state.savedUnits.forEach(
       (unitState) => {
@@ -278,24 +277,21 @@ class App extends Component<{}, State> {
         html2canvas(detachedDiv as HTMLElement).then(
           (canvas) => {
             const imageUrl = canvas.toDataURL('image/png');
-            images.append({
-              url: imageUrl,
-              name: unitState.name,
-            });
+            img.file(`${unitState.name}.png`, this._dataURItoBlob(imageUrl));
           },
         );
-        // click the link
       }
     );
-    // TODO: install JSZip
-    var zip = new JSZip();
-    var img = zip.folder("images");
+    zip.generateAsync({ type: "blob" }).then(
+      (content) => {
+        saveAs(content, "unit-cards.zip");
+    });
   };
 
   /**
   * Used to convert base64/URLEncoded data component to raw binary data held in a string
   */
-  dataURItoBlob = (dataURI) {
+  _dataURItoBlob = (dataURI) {
     var byteString;
     if (dataURI.split(',')[0].indexOf('base64') >= 0)
         byteString = atob(dataURI.split(',')[1]);
