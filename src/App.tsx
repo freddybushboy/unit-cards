@@ -271,22 +271,25 @@ class App extends Component<{}, State> {
     await Promise.all(this.state.savedUnits.map(async (unitState) => {
       // generate a card for the unit state
       const detachedDiv = document.createElement('div');
+
+      // TODO: Figure out a way to not hardcode this style
+      detachedDiv.style.width = '320px';
+
       document.body.appendChild(detachedDiv);
       var card = (
         <Card unitData={unitState} savedTraits={this.state.savedTraits} />
       );
       ReactDOM.render(card, detachedDiv);
-      await html2canvas(detachedDiv as HTMLElement).then((canvas) => {
+      await html2canvas(detachedDiv as HTMLElement, { scrollY: -window.scrollY }).then((canvas) => {
         const imageUrl = canvas.toDataURL();
         img && img.file(`${unitState.name}.png`, this._dataURItoBlob(imageUrl));
         document.body.removeChild(detachedDiv);
       });
-    }))
-      .then(async () => {
-        await (img && img.generateAsync({ type: 'blob' }).then((content) => {
-          saveAs(content, 'unit-cards.zip');
-        }));
-      });
+    })).then(async () => {
+      await (img && img.generateAsync({ type: 'blob' }).then((content) => {
+        saveAs(content, 'unit-cards.zip');
+      }));
+    });
   };
 
   /**
