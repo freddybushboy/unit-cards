@@ -264,25 +264,29 @@ class App extends Component<{}, State> {
     );
   };
 
-  downloadSavedUnits = () => {
+  downloadSavedUnits = async () => {
     var zip = new jszip();
     var img = zip.folder('images');
 
-    this.state.savedUnits.forEach((unitState) => {
+    await Promise.all(this.state.savedUnits.map(async (unitState) => {
       // generate a card for the unit state
       const detachedDiv = document.createElement('div');
+      document.body.appendChild(detachedDiv);
       var card = (
         <Card unitData={unitState} savedTraits={this.state.savedTraits} />
       );
       ReactDOM.render(card, detachedDiv);
-      html2canvas(detachedDiv as HTMLElement).then((canvas) => {
-        const imageUrl = canvas.toDataURL('image/png');
+      await html2canvas(detachedDiv as HTMLElement).then((canvas) => {
+        const imageUrl = canvas.toDataURL();
         img && img.file(`${unitState.name}.png`, this._dataURItoBlob(imageUrl));
+        document.body.removeChild(detachedDiv);
       });
-    });
-    zip.generateAsync({ type: 'blob' }).then((content) => {
-      saveAs(content, 'unit-cards.zip');
-    });
+    }))
+      .then(async () => {
+        await (img && img.generateAsync({ type: 'blob' }).then((content) => {
+          saveAs(content, 'unit-cards.zip');
+        }));
+      });
   };
 
   /**
