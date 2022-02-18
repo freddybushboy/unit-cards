@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import html2canvas from 'html2canvas';
+import jszip from 'jszip';
+import { saveAs } from 'file-saver';
 import { Card } from './components/Card/Card';
 import {
   UnitAncestry,
@@ -30,6 +32,7 @@ import {
   unitSizes,
 } from './fixtures/units';
 import { fortSize } from './fixtures/unitStats';
+import ReactDOM from 'react-dom';
 
 export interface State {
   name: string;
@@ -261,6 +264,57 @@ class App extends Component<{}, State> {
     );
   };
 
+  downloadSavedUnits = async () => {
+    var zip = new jszip();
+    var img = zip.folder('images');
+
+    await Promise.all(this.state.savedUnits.map(async (unitState) => {
+      // generate a card for the unit state
+      const detachedDiv = document.createElement('div');
+
+      // TODO: Figure out a way to not hardcode this style
+      detachedDiv.style.width = '320px';
+
+      document.body.appendChild(detachedDiv);
+      var card = (
+        <Card unitData={unitState} savedTraits={this.state.savedTraits} />
+      );
+      ReactDOM.render(card, detachedDiv);
+      await html2canvas(detachedDiv as HTMLElement, { scrollY: -window.scrollY }).then((canvas) => {
+        const imageUrl = canvas.toDataURL();
+        img && img.file(`${unitState.name}.png`, this._dataURItoBlob(imageUrl));
+        document.body.removeChild(detachedDiv);
+      });
+    })).then(async () => {
+      await (img && img.generateAsync({ type: 'blob' }).then((content) => {
+        saveAs(content, 'unit-cards.zip');
+      }));
+    });
+  };
+
+  /**
+   * Used to convert base64/URLEncoded data component to raw binary data held in a string
+   */
+  _dataURItoBlob = (dataURI: string) => {
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0) {
+      byteString = atob(dataURI.split(',')[1]);
+    } else {
+      byteString = unescape(dataURI.split(',')[1]);
+    }
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ia], { type: mimeString });
+  };
+
   traitsMissing = (unit: UnitData) => {
     return unit.selectedTraits.some(
       (trait) =>
@@ -315,6 +369,12 @@ class App extends Component<{}, State> {
                       </li>
                     ))}
                   </ul>
+                  <button
+                    className="btn btn-sm btn-primary mt-3"
+                    onClick={this.downloadSavedUnits}
+                  >
+                    Download Saved Units
+                  </button>
                 </Collapse>
               </div>
             ) : null}
