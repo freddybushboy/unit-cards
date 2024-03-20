@@ -112,19 +112,19 @@ class App extends Component<{}, State> {
     });
   };
 
-  unitDataComputed = (): UnitData => {
+  unitDataComputed = (unit: State | UnitData): UnitData => {
     return {
-      ...this.state,
-      attack: attack(this.state),
-      defense: defense(this.state),
-      power: power(this.state),
-      toughness: toughness(this.state),
-      morale: morale(this.state),
-      cost: cost(this.state),
+      ...unit,
+      attack: attack(unit),
+      defense: defense(unit),
+      power: power(unit),
+      toughness: toughness(unit),
+      morale: morale(unit),
+      cost: cost(unit, this.state.savedTraits),
       size:
-        this.state.type === 'Fortification' && this.state.fortType !== 'None'
-          ? (fortSize[this.state.fortType][this.state.fortLevel] as UnitSize)
-          : this.state.size,
+        unit.type === 'Fortification' && unit.fortType !== 'None'
+          ? (fortSize[unit.fortType][unit.fortLevel] as UnitSize)
+          : unit.size,
     };
   };
 
@@ -277,7 +277,7 @@ class App extends Component<{}, State> {
 
       document.body.appendChild(detachedDiv);
       var card = (
-        <Card unitData={unitState} savedTraits={this.state.savedTraits} />
+        <Card unitData={this.unitDataComputed(unitState)} savedTraits={this.state.savedTraits} />
       );
       ReactDOM.render(card, detachedDiv);
       await html2canvas(detachedDiv as HTMLElement, { scrollY: -window.scrollY }).then((canvas) => {
@@ -385,7 +385,7 @@ class App extends Component<{}, State> {
 
           <div className="col-md-6">
             <Card
-              unitData={this.unitDataComputed()}
+              unitData={this.unitDataComputed(this.state)}
               savedTraits={this.state.savedTraits}
             />
             <button
