@@ -112,7 +112,7 @@ class App extends Component<{}, State> {
     });
   };
 
-  unitDataComputed = (unit: State | UnitData): UnitData => {
+  unitDataComputed = (unit: UnitData): UnitData => {
     return {
       ...unit,
       attack: attack(unit),
